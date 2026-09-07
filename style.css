@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+.website{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:155px;
+    min-height:100vh;
+    flex-shrink:0;
+    padding:24px 12px;
+    background:rgba(22,22,22,.97);
+    position:relative;
+    z-index:20;
+}
+
+.brand{
+    text-align:center;
+    margin-bottom:38px;
+}
+
+.iron-logo{
+    line-height:18px;
+    letter-spacing:2px;
+    color:#d5d5d5;
+}
+
+.iron-logo span,
+.iron-logo strong,
+.brand small{
+    display:block;
+}
+
+.iron-logo span{
+    font-size:17px;
+    font-weight:600;
+}
+
+.iron-logo strong{
+    font-size:22px;
+    letter-spacing:3px;
+}
+
+.brand small{
+    margin-top:6px;
+    font-size:7px;
+    letter-spacing:3px;
+    color:#999;
+}
+
+.navigation{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.nav-link{
+    display:block;
+    padding:7px 11px;
+    color:#eee;
+    text-decoration:none;
+    font-size:9px;
+    font-weight:500;
+    letter-spacing:.5px;
+    border-radius:20px;
+    transition:.25s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    background:#454545;
+}
+
+/* SOCIAL */
+.social{
+    position:absolute;
+    bottom:25px;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:6px;
+}
+
+.social a{
+    width:21px;
+    height:21px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#333;
+    color:#fff;
+    text-decoration:none;
+    font-size:9px;
+    transition:.2s;
+}
+
+.social a:hover{
+    background:#bd7950;
+    transform:translateY(-2px);
+}
+
+/* MAIN */
+.main-content{
+    flex:1;
+    min-width:0;
+}
+
+/* HERO */
+.hero{
+    height:calc(100vh - 105px);
+    min-height:450px;
+    position:relative;
+    overflow:hidden;
+    background:#777;
+}
+
+.house-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    z-index:1;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.18) 45%,
+        rgba(0,0,0,.05)
+    );
+}
+
+/* AGENT */
+.agent-image{
+    position:absolute;
+    z-index:5;
+    left:-9%;
+    bottom:-2%;
+    height:100%;
+    width:auto;
+    max-width:64%;
+    object-fit:contain;
+    object-position:bottom;
+    filter:drop-shadow(
+        5px 8px 12px rgba(0,0,0,.35)
+    );
+}
+
+/* ROB CLEAPOR - STRAIGHT */
+.agent-name{
+    position:absolute;
+    z-index:7;
+    left:7.5%;
+    bottom:20px;
+    padding:4px 18px 5px;
+    background:rgba(30,30,30,.7);
+    border-radius:3px;
+    transform:none;
+}
+
+.agent-name span,
+.agent-name strong{
+    display:block;
+}
+
+.agent-name span{
+    color:#c59a78;
+    font-size:25px;
+    line-height:22px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.agent-name strong{
+    color:#ddd;
+    font-size:17px;
+    line-height:17px;
+    font-weight:400;
+}
+
+/* SEARCH */
+.hero-search{
+    position:absolute;
+    z-index:8;
+    left:61%;
+    bottom:19%;
+    width:42%;
+    transform:translate(-50%,-50%);
+}
+
+.hero-search h2{
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:1px;
+    background:linear-gradient(#fff,#bd7950);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.search-box{
+    width:100%;
+    height:37px;
+    display:flex;
+    background:#fff;
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:0 3px 8px rgba(0,0,0,.25);
+}
+
+.search-box input{
+    flex:1;
+    min-width:0;
+    border:0;
+    outline:0;
+    padding:0 12px;
+    color:#555;
+    font-family:inherit;
+    font-size:12px;
+}
+
+.search-box input::placeholder{
+    color:#888;
+}
+
+.search-box button{
+    width:45px;
+    border:0;
+    background:#bd7950;
+    color:#fff;
+    cursor:pointer;
+    font-size:14px;
+    transition:.2s;
+}
+
+.search-box button:hover{
+    background:#a86542;
+}
+
+/* BOTTOM SECTION */
+.bottom-section{
+    width:100%;
+    height:105px;
+    display:grid;
+    grid-template-columns:42% 58%;
+}
+
+.new-listings{
+    padding:19px 32px;
+    background:linear-gradient(
+        rgba(182,100,57,.9),
+        rgba(159,79,41,.9)
+    );
+}
+
+.bottom-content h2,
+.worth-content h2{
+    font-weight:600;
+}
+
+.bottom-content h2{
+    font-size:18px;
+    line-height:20px;
+}
+
+.bottom-content p{
+    margin:2px 0 8px;
+    font-size:10px;
+    color:#f1f1f1;
+}
+
+.orange-button{
+    display:inline-block;
+    padding:5px 13px;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:2px;
+    color:#fff;
+    text-decoration:none;
+    font-size:8px;
+    transition:.2s;
+}
+
+.orange-button:hover{
+    background:rgba(255,255,255,.12);
+}
+
+/* HOME WORTH */
+.home-worth{
+    padding:17px 28px;
+    background:rgba(25,25,25,.97);
+}
+
+.worth-content h2{
+    font-size:17px;
+    line-height:20px;
+}
+
+.worth-content p{
+    margin:2px 0 8px;
+    font-size:9px;
+    color:#cfcfcf;
+}
+
+.worth-form{
+    width:420px;
+    max-width:100%;
+    height:29px;
+    display:flex;
+    background:#fff;
+    overflow:hidden;
+    border-radius:2px;
+}
+
+.worth-form input{
+    flex:1;
+    min-width:0;
+    border:0;
+    outline:0;
+    padding:0 9px;
+    font-family:inherit;
+    font-size:10px;
+    color:#444;
+}
+
+.worth-form select{
+    width:58px;
+    border:0;
+    border-left:1px solid #ddd;
+    outline:0;
+    font-family:inherit;
+    font-size:9px;
+    color:#555;
+}
+
+.worth-form button{
+    width:34px;
+    border:0;
+    background:#444;
+    color:#fff;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.worth-form button:hover{
+    background:#bd7950;
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+    .sidebar{
+        width:140px;
+    }
+
+    .agent-image{
+        left:-3%;
+        max-width:60%;
+    }
+
+    .hero-search{
+        left:63%;
+        width:46%;
+    }
+
+    .new-listings{
+        padding:19px 20px;
+    }
+
+    .home-worth{
+        padding:17px 20px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .website{
+        display:block;
+        min-height:100vh;
+    }
+
+    .sidebar{
+        width:100%;
+        min-height:auto;
+        padding:14px 10px 12px;
+    }
+
+    .brand{
+        margin-bottom:12px;
+    }
+
+    .iron-logo span{
+        font-size:15px;
+    }
+
+    .iron-logo strong{
+        font-size:20px;
+    }
+
+    .brand small{
+        font-size:6px;
+    }
+
+    .navigation{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:4px;
+    }
+
+    .nav-link{
+        padding:6px 8px;
+        font-size:8px;
+        white-space:nowrap;
+    }
+
+    .social{
+        position:static;
+        margin-top:10px;
+        display:flex;
+    }
+
+    .social a{
+        width:25px;
+        height:25px;
+        font-size:11px;
+    }
+
+    .main-content{
+        width:100%;
+    }
+
+    .hero{
+        height:520px;
+        min-height:520px;
+    }
+
+    .house-image{
+        object-position:center;
+    }
+
+    .hero-overlay{
+        background:linear-gradient(
+            180deg,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.25) 45%,
+            rgba(0,0,0,.65)
+        );
+    }
+
+    .agent-image{
+        left:50%;
+        bottom:0;
+        transform:translateX(-50%);
+        width:auto;
+        height:63%;
+        max-width:90%;
+        object-fit:contain;
+    }
+
+    /* STRAIGHT ON MOBILE */
+    .agent-name{
+        left:50%;
+        bottom:18px;
+        transform:translateX(-50%);
+        padding:4px 15px 5px;
+    }
+
+    .agent-name span{
+        font-size:22px;
+        line-height:20px;
+    }
+
+    .agent-name strong{
+        font-size:15px;
+        line-height:15px;
+    }
+
+    .hero-search{
+        top:35px;
+        left:50%;
+        bottom:auto;
+        width:88%;
+        transform:translateX(-50%);
+    }
+
+    .hero-search h2{
+        margin-bottom:8px;
+        font-size:15px;
+        text-align:center;
+    }
+
+    .search-box{
+        height:40px;
+    }
+
+    .search-box input{
+        font-size:11px;
+        padding:0 10px;
+    }
+
+    .search-box button{
+        width:44px;
+    }
+
+    .bottom-section{
+        height:auto;
+        display:block;
+    }
+
+    .new-listings,
+    .home-worth{
+        min-height:150px;
+        padding:22px 20px;
+    }
+
+    .bottom-content h2,
+    .worth-content h2{
+        font-size:17px;
+    }
+
+    .bottom-content p,
+    .worth-content p{
+        font-size:10px;
+        margin-bottom:10px;
+    }
+
+    .orange-button{
+        font-size:9px;
+        padding:7px 14px;
+    }
+
+    .worth-form{
+        width:100%;
+        height:38px;
+    }
+
+    .worth-form input{
+        font-size:10px;
+    }
+
+    .worth-form select{
+        width:65px;
+        font-size:9px;
+    }
+
+    .worth-form button{
+        width:42px;
+    }
+}
+
+/* SMALL MOBILE */
+@media(max-width:480px){
+
+    .sidebar{
+        padding:12px 7px;
+    }
+
+    .brand{
+        margin-bottom:10px;
+    }
+
+    .navigation{
+        gap:3px;
+    }
+
+    .nav-link{
+        padding:6px;
+        font-size:7px;
+    }
+
+    .social{
+        margin-top:8px;
+    }
+
+    .hero{
+        height:490px;
+        min-height:490px;
+    }
+
+    .hero-search{
+        width:92%;
+        top:28px;
+    }
+
+    .hero-search h2{
+        font-size:13px;
+    }
+
+    .search-box{
+        height:38px;
+    }
+
+    .search-box input{
+        font-size:10px;
+    }
+
+    .agent-image{
+        height:61%;
+        max-width:100%;
+    }
+
+    /* STRAIGHT */
+    .agent-name{
+        bottom:15px;
+        transform:translateX(-50%);
+    }
+
+    .agent-name span{
+        font-size:20px;
+    }
+
+    .agent-name strong{
+        font-size:14px;
+    }
+
+    .new-listings,
+    .home-worth{
+        min-height:145px;
+        padding:20px 17px;
+    }
+}
+
+/* EXTRA SMALL MOBILE */
+@media(max-width:360px){
+
+    .nav-link{
+        font-size:6.5px;
+        padding:5px;
+    }
+
+    .hero{
+        height:460px;
+        min-height:460px;
+    }
+
+    .hero-search{
+        width:94%;
+        top:25px;
+    }
+
+    .hero-search h2{
+        font-size:12px;
+    }
+
+    .agent-image{
+        height:58%;
+    }
+
+    .search-box{
+        height:36px;
+    }
+
+    .search-box input{
+        font-size:9px;
+    }
+
+    .new-listings,
+    .home-worth{
+        padding:18px 15px;
+    }
+}
+
+/* ACCESSIBILITY */
+.nav-link:focus-visible,
+.social a:focus-visible,
+.search-box button:focus-visible,
+.orange-button:focus-visible,
+.worth-form button:focus-visible{
+    outline:2px solid #fff;
+    outline-offset:2px;
+}
+
+/* EXTRA HERO RESPONSIVE FIX */
+@media(max-width:900px){
+    .hero{
+        min-height:430px;
+    }
+}
+
+@media(max-width:700px){
+    .hero{
+        height:520px;
+        min-height:520px;
+    }
+
+    .bottom-section{
+        display:block;
+    }
+}
+
+@media(max-width:480px){
+    .hero{
+        height:490px;
+        min-height:490px;
+    }
+}
