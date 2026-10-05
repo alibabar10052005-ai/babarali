@@ -1,0 +1,598 @@
+
+
+/* =========================================================
+   LEGACY ESTIMATING
+   MODERN DEEP NAVY + GOLD
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #536273;
+    background: #f7f9fc;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TOP CONTACT BAR
+========================================================= */
+
+.topbar {
+    background: #0b1f33;
+    color: #ffffff;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-content {
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 9px 35px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.top-content span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    opacity: 0.92;
+
+    transition: 0.3s ease;
+}
+
+.top-content span:hover {
+    color: #d9ad55;
+}
+
+.top-content i {
+    color: #d9ad55;
+}
+
+
+/* =========================================================
+   STICKY NAVBAR
+========================================================= */
+
+header {
+    background: rgba(255, 255, 255, 0.97);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 4px 20px rgba(11, 31, 51, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   LARGE NAVBAR - TOP
+========================================================= */
+
+.navbar {
+    max-width: 1450px;
+
+    height: 90px;
+
+    margin: auto;
+
+    padding: 0 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition:
+        height 0.35s ease,
+        padding 0.35s ease;
+}
+
+
+/* =========================================================
+   LOGO - LARGE
+========================================================= */
+
+.img {
+    width: 180px;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    transition:
+        width 0.35s ease,
+        height 0.35s ease;
+}
+
+.img img {
+    width: 145px;
+
+    height: auto;
+
+    max-height: 75px;
+
+    object-fit: contain;
+
+    transition:
+        width 0.35s ease,
+        max-height 0.35s ease;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #29445c;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        font-size 0.35s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #d9ad55;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0b1f33;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SHRINK NAVBAR AFTER SCROLL
+========================================================= */
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+
+    box-shadow:
+        0 5px 25px rgba(11, 31, 51, 0.15);
+}
+
+header.scrolled .navbar {
+    height: 62px;
+}
+
+header.scrolled .img {
+    width: 125px;
+
+    height: 58px;
+}
+
+header.scrolled .img img {
+    width: 105px;
+
+    max-height: 52px;
+}
+
+header.scrolled .nav-links a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu {
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #0b1f33;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+        /* =========================================
+           TERMS TITLE
+        ========================================= */
+
+        .terms-title {
+            width: 100%;
+
+            padding: 60px 20px 35px;
+
+            text-align: center;
+        }
+
+
+        .terms-title h1 {
+            color: #102f49;
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 34px;
+            font-weight: 800;
+
+            line-height: 1.3;
+
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .terms-line {
+            width: 100px;
+            height: 4px;
+
+            background: #d4af37;
+
+            margin: 12px auto 0;
+
+            border-radius: 3px;
+        }
+
+
+        /* =========================================
+           TERMS AREA
+        ========================================= */
+
+        .terms-wrapper {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 20px 0 70px;
+        }
+
+
+        /* =========================================
+           EACH TERM
+        ========================================= */
+
+        .term {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            margin-bottom: 24px;
+        }
+
+
+        /* =========================================
+           NUMBER
+        ========================================= */
+
+        .number {
+            min-width: 35px;
+            height: 35px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #d4af37;
+
+            color: #102f49;
+
+            border-radius: 50%;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            line-height: 1;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================
+           TERM TEXT
+        ========================================= */
+
+        .term-text {
+            padding-top: 3px;
+        }
+
+
+        .term-text p {
+            color: #536273;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            line-height: 1.8;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            width: 100%;
+
+            padding: 25px 20px;
+
+            background: #0b1f33;
+
+            text-align: center;
+        }
+
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.75);
+
+            font-size: 12px;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .top-content {
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 8px 20px;
+
+                padding: 8px 15px;
+            }
+
+
+            .navbar {
+                height: auto;
+
+                min-height: 70px;
+
+                padding: 8px 20px;
+
+                flex-direction: column;
+            }
+
+
+            .nav-links {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 10px 18px;
+
+                padding-bottom: 8px;
+            }
+
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+
+            .terms-title {
+                padding: 45px 20px 30px;
+            }
+
+
+            .terms-title h1 {
+                font-size: 28px;
+            }
+
+
+            .terms-wrapper {
+                width: 90%;
+            }
+
+
+            .term {
+                gap: 13px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .number {
+                min-width: 31px;
+                height: 31px;
+
+                font-size: 12px;
+            }
+
+
+            .term-text p {
+                font-size: 14px;
+
+                line-height: 1.7;
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 480px) {
+
+            .top-content {
+                flex-direction: column;
+
+                gap: 5px;
+
+                font-size: 11px;
+            }
+
+
+            .navbar {
+                padding: 8px 15px;
+            }
+
+
+            .img {
+                height: 55px;
+            }
+
+
+            .img img {
+                width: 105px;
+            }
+
+
+            .nav-links {
+                gap: 8px 13px;
+            }
+
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+
+            .terms-title {
+                padding: 35px 15px 25px;
+            }
+
+
+            .terms-title h1 {
+                font-size: 23px;
+            }
+
+
+            .terms-line {
+                width: 80px;
+                height: 3px;
+            }
+
+
+            .terms-wrapper {
+                width: 92%;
+
+                padding-top: 10px;
+            }
+
+
+            .term {
+                gap: 10px;
+
+                margin-bottom: 18px;
+            }
+
+
+            .number {
+                min-width: 27px;
+                height: 27px;
+
+                font-size: 10px;
+            }
+
+
+            .term-text p {
+                font-size: 13px;
+
+                line-height: 1.65;
+            }
+
+        }

@@ -1,0 +1,506 @@
+/* =========================================================
+   LEGACY ESTIMATING
+   MODERN DEEP NAVY + GOLD
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #536273;
+    background: #f7f9fc;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TOP CONTACT BAR
+========================================================= */
+
+.topbar {
+    background: #0b1f33;
+    color: #ffffff;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-content {
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 9px 35px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.top-content span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    opacity: 0.92;
+
+    transition: 0.3s ease;
+}
+
+.top-content span:hover {
+    color: #d9ad55;
+}
+
+.top-content i {
+    color: #d9ad55;
+}
+
+
+/* =========================================================
+   STICKY NAVBAR
+========================================================= */
+
+header {
+    background: rgba(255, 255, 255, 0.97);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 4px 20px rgba(11, 31, 51, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   LARGE NAVBAR - TOP
+========================================================= */
+
+.navbar {
+    max-width: 1450px;
+
+    height: 90px;
+
+    margin: auto;
+
+    padding: 0 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition:
+        height 0.35s ease,
+        padding 0.35s ease;
+}
+
+
+/* =========================================================
+   LOGO - LARGE
+========================================================= */
+
+.img {
+    width: 180px;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    transition:
+        width 0.35s ease,
+        height 0.35s ease;
+}
+
+.img img {
+    width: 145px;
+
+    height: auto;
+
+    max-height: 75px;
+
+    object-fit: contain;
+
+    transition:
+        width 0.35s ease,
+        max-height 0.35s ease;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #29445c;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        font-size 0.35s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #d9ad55;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0b1f33;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SHRINK NAVBAR AFTER SCROLL
+========================================================= */
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+
+    box-shadow:
+        0 5px 25px rgba(11, 31, 51, 0.15);
+}
+
+header.scrolled .navbar {
+    height: 62px;
+}
+
+header.scrolled .img {
+    width: 125px;
+
+    height: 58px;
+}
+
+header.scrolled .img img {
+    width: 105px;
+
+    max-height: 52px;
+}
+
+header.scrolled .nav-links a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu {
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #0b1f33;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SERVICES PAGE
+========================= */
+
+.heading-line {
+    width: 290px;
+    height: 2px;
+    background: #d4af37;
+    margin: 14px auto 25px;
+    border-radius: 10px;
+}
+
+.service-section {
+    width: 100%;
+    padding: 45px 5% 60px;
+    text-align: center;
+}
+
+.service-section h2 {
+    margin: 0 0 35px;
+    color: #102f49;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+/* 2 BIG COLUMNS */
+
+.service-grid {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+}
+
+
+/* SERVICE */
+
+.service-item {
+    text-align: center;
+}
+
+
+/* IMAGE */
+
+.service-item img {
+    width: 330px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 16px;
+    transition: transform .35s ease, box-shadow .35s ease;
+    cursor: pointer;
+}
+
+
+/* IMAGE HOVER */
+
+.service-item:hover img {
+    transform: scale(1.06) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(16, 47, 73, 0.18);
+}
+
+
+/* TITLE */
+
+.service-item h3 {
+    color: #102f49;
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+
+/* DESCRIPTION */
+
+.service-item p {
+    max-width: 380px;
+    margin: auto;
+    color: #667481;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COMMERCIAL
+========================= */
+
+.commercial {
+    background: #eef2f5;
+    padding-top: 35px;
+    padding-bottom: 55px;
+}
+
+
+/* =========================
+   EXTRA SERVICES
+========================= */
+
+.extra-services {
+    width: 100%;
+    padding: 25px 5% 65px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.upload-text {
+    color: #102f49;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.upload-btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #102f49;
+    padding: 11px 24px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 35px;
+    transition: .3s;
+}
+
+.upload-btn:hover {
+    background: #102f49;
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+.extra-services .service-grid {
+    margin-top: 0;
+}
+
+
+/* =========================
+   LAPTOP / LARGE SCREEN
+========================= */
+
+@media (min-width: 1200px) {
+
+    .service-section {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .service-grid {
+        max-width: 1100px;
+        gap: 90px;
+    }
+
+    .service-item img {
+        width: 360px;
+        height: 240px;
+    }
+
+    .service-item h3 {
+        font-size: 22px;
+    }
+
+    .service-item p {
+        font-size: 15px;
+        max-width: 390px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .service-section {
+        padding: 35px 20px 50px;
+    }
+
+    .service-section h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 45px;
+    }
+
+    .service-item img {
+        width: 100%;
+        max-width: 330px;
+        height: 210px;
+    }
+
+    .service-item h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 340px;
+    }
+
+    .upload-text {
+        font-size: 13px;
+    }
+
+    .upload-btn {
+        font-size: 13px;
+    }
+}
