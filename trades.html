@@ -1,242 +1,1190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Our Trades - Legacy Estimating</title>
 
-    <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="css/trades.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Trades CSS -->
+     <link rel="stylesheet" href="css/trades.css">
+    <link rel="stylesheet"
+          href="css/trades.css">
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
+<!-- =====================================================
+     TOP CONTACT BAR
+===================================================== -->
 
-        <div class="logo">
+<div class="topbar">
+
+    <div class="top-content">
+
+        <span>
+            <i class="fa-solid fa-phone"></i>
+            (718) 550-7786
+        </span>
+
+        <span>
+            <i class="fa-solid fa-envelope"></i>
+            info@legacyestimating.com
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header id="mainHeader">
+
+    <nav class="navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="img">
             <img src="images/logo.png" alt="Legacy Estimating">
+        </a>
+
+
+        <!-- NAV LINKS -->
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html" >Home</a>
+
+            <a href="trades.html" class="active">Trades</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+            <a href="sample.html">Samples</a>
+
+            <a href="aboutus.html">About Us</a>
+
+            <a href="contact.html">Contact</a>
+
         </div>
 
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Trades</a>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Samples</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </nav>
 
-        <div class="menu-btn">
+        <!-- MOBILE MENU -->
+
+        <button class="menu" id="menuBtn" aria-label="Open Menu">
+
             <i class="fa-solid fa-bars"></i>
-        </div>
 
-    </header>
+        </button>
 
+    </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="hero-image"></div>
-
-        <div class="hero-title">
-            <h1>Our Trades</h1>
-        </div>
-
-        <div class="hero-sidebar">
-            <h3>Recent Posts</h3>
-
-            <a href="#">Nulla nibh neque, suscipit sit amet dictum nec</a>
-            <a href="#">Morbi tincidunt urna sed tellus venenatis sollicitudin</a>
-            <a href="#">Quisque at nisl maximus, fringilla magna sed</a>
-
-            <h3 class="sidebar-heading">Recent Comments</h3>
-
-            <p>No comments to show.</p>
-
-            <h3 class="sidebar-heading">Archives</h3>
-            <p>June 2026</p>
-
-            <h3>Categories</h3>
-            <p>&gt;&gt; Uncategorized</p>
-
-            <h3>Meta</h3>
-            <p>Log in</p>
-            <p>Entries feed</p>
-            <p>Comments feed</p>
-            <p>WordPress.org</p>
-        </div>
-
-    </section>
+</header>
 
 
-    <!-- MAIN CONTENT -->
-    <main class="main-container">
+<!-- =================================================
+     HERO / TRUCK IMAGE
+================================================= -->
 
-        <div class="content">
+<section class="trades-hero">
 
-            <!-- SECTION 1 -->
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- Search -->
+    <div class="hero-search">
+
+        <form id="tradeSearch">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search ..."
+                    autocomplete="off"
+                >
+
+                <button type="submit"
+                        aria-label="Search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <div id="searchMessage"></div>
+
+    </div>
+
+
+
+    <!-- Hero Heading -->
+    <div class="hero-content">
+
+        <h1>OUR TRADES</h1>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     TRADES CONTENT
+================================================= -->
+
+<section class="trades-page">
+
+    <div class="trades-container">
+
+
+        <!-- =================================================
+             MAIN TRADES
+        ================================================= -->
+
+        <main class="trades-main">
+
+
+
+            <!-- ================= ELECTRICAL ================= -->
+
             <section class="trade-section">
 
-                <h2>Our Trades</h2>
+                <h2>Electrical</h2>
 
-                <div class="title-line"></div>
+                <div class="heading-line"></div>
 
-                <div class="trade-row">
-
-                    <div class="trade-text">
-
-                        <p>
-                            Legacy Estimating provides accurate and professional
-                            estimating services for a wide range of construction
-                            trades. Our experienced estimators use the latest
-                            technology and estimating software to provide
-                            detailed and reliable takeoffs.
-                        </p>
-
-                        <p>
-                            We help contractors, builders and subcontractors
-                            prepare accurate bids and improve their chances
-                            of winning more projects.
-                        </p>
-
-                        <a href="#" class="btn">
-                            Reach Us Out
-                        </a>
-
-                    </div>
-
-                    <div class="trade-image">
-                        <img src="images/trade-1.jpg" alt="Estimating Services">
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- SECTION 2 -->
-            <section class="trade-section second">
-
-                <h2>Construction Trades</h2>
-
-                <div class="title-line"></div>
-
-                <div class="trade-row reverse">
-
-                    <div class="trade-image">
-                        <img src="images/trade-2.jpg" alt="Construction Trades">
-                    </div>
-
-                    <div class="trade-text">
-
-                        <p>
-                            Our estimating team has experience across multiple
-                            construction trades. We provide detailed quantity
-                            takeoffs and cost estimates designed around the
-                            requirements of each project.
-                        </p>
-
-                        <p>
-                            From residential projects to commercial
-                            construction, our team delivers dependable
-                            estimating solutions.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- TRADES GRID -->
-            <section class="trades-list">
-
-                <h2>Our Trade Services</h2>
-
-                <div class="title-line"></div>
 
                 <div class="trade-grid">
 
-                    <div class="trade-card">
-                        <i class="fa-solid fa-bolt"></i>
-                        <h3>Electrical</h3>
-                        <p>
-                            Detailed electrical quantity takeoffs and
-                            estimating services.
-                        </p>
-                    </div>
 
-                    <div class="trade-card">
-                        <i class="fa-solid fa-house"></i>
-                        <h3>Concrete</h3>
-                        <p>
-                            Accurate concrete material quantities and
-                            project estimates.
-                        </p>
-                    </div>
+                    <a href="trades/electrical-estimating.html"
+                       class="trade-card">
 
-                    <div class="trade-card">
-                        <i class="fa-solid fa-building"></i>
-                        <h3>Structural</h3>
-                        <p>
-                            Professional structural estimating and
-                            quantity takeoffs.
-                        </p>
-                    </div>
+                        <img src="images/electric.jpg"
+                             alt="Electrical Estimating">
 
-                    <div class="trade-card">
-                        <i class="fa-solid fa-paint-roller"></i>
-                        <h3>Finishes</h3>
+                        <h3>
+                            Electrical Estimating
+                        </h3>
+
                         <p>
-                            Complete finishing material takeoffs and
-                            estimating solutions.
+                            Electrical estimators at Legacy Estimating are experienced and professional experts, delivering custom, quick and precise Electrical Estimating Outsourcing Services for residential and commercial projects.
                         </p>
-                    </div>
+
+                    </a>
+
+
+
+                    <a href="trades/electrical-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/electrics.jpg"
+                             alt="Electrical Takeoff">
+
+                        <h3>
+                            Electrical Takeoff
+                        </h3>
+
+                        <p>
+                            Legacy Estimations offers comprehensive and detailed custom Electrical Takeoff Outsourcing Services in the least possible turnaround time of 48hours or less
+                        </p>
+
+                    </a>
+
 
                 </div>
 
             </section>
 
-        </div>
 
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+            <!-- ================= MECHANICAL ================= -->
 
-            <h3>GET IN TOUCH WITH US:</h3>
+            <section class="trade-section alternate">
 
-            <div class="contact-box">
+                <h2>Mechanical</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/mechanical-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/mecha.jpg"
+                             alt="Mechanical Takeoff">
+
+                        <h3>
+                            Mechanical Takeoff
+                        </h3>
+
+                        <p>
+                            At Legacy Estimating, we strive to provide a complete range of Mechanical Estimating Outsourcing Services along with detailed Mechanical Takeoff Outsourcing Services,
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/mechanical-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/mech.jpg"
+                             alt="Mechanical Estimating">
+
+                        <h3>
+                            Mechanical Estimating
+                        </h3>
+
+                        <p>
+                            Legacy Estimating helps you close more deals and jobs by offering efficient, effective, and precise cost estimations / Mechanical Estimating Outsourcing Services.                       </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= PLUMBING ================= -->
+
+            <section class="trade-section">
+
+                <h2>Plumbing</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/plumbing-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/plumbing.jpg"
+                             alt="Plumbing Estimating">
+
+                        <h3>
+                            Plumbing Estimating
+                        </h3>
+
+                        <p>
+                            Legacy Estimating offers specific and swift plumbing estimating outsourcing services for general contractors, plumbing, piping, mechanical, and insulation designers and contractors.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/plumbing-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/plumbings.jpg"
+                             alt="Plumbing Takeoff">
+
+                        <h3>
+                            Plumbing Takeoff
+                        </h3>
+
+                        <p>
+                            Legacy estimating is your one-stop platform for all your Plumbing Takeoff Outsourcing Services. We completely understand that estimating any plumbing job can become one huge tedious task.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= DRYWALL ================= -->
+
+            <section class="trade-section alternate">
+
+                <h2>Drywall</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/drywall-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/dry.jpg"
+                             alt="Drywall Estimating">
+
+                        <h3>
+                            Drywall Estimating
+                        </h3>
+
+                        <p>
+                            Legacy Estimating is a leading engineering entity offering the best drywall estimating outsourcing services to general contractors, drywall contractors and subcontractors. There are many contributing factors to a perfect drywall job, like the drywall mud, repairs, installation costs, sheetrock quantities, and much more.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/drywall-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/drys.jpg"
+                             alt="Drywall Takeoff">
+
+                        <h3>
+                            Drywall Takeoff
+                        </h3>
+
+                        <p>
+                            Are you looking for the best drywall takeoff outsourcing services and want to ditch the runtime surprises of over, off and underquoting on your bids? – Legacy estimating is your best bet, helping you get precise and detailed drywall estimates.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= MASONRY ================= -->
+
+            <section class="trade-section">
+
+                <h2>Masonry</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/masonry-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/masonary.jpg"
+                             alt="Masonry Estimating">
+
+                        <h3>
+                            Masonry Estimating
+                        </h3>
+
+                        <p>
+                            Looking for the best masonry estimating outsourcing services, then Legacy Estimating is at your service. We have excelled in delivering timely and precise estimates worldwide with our diversified experience in the estimation and takeoff industry.                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/masonry-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/masonar.jpg"
+                             alt="Masonry Takeoff">
+
+                        <h3>
+                            Masonry Takeoff
+                        </h3>
+
+                        <p>
+                            Are you on the lookout for the best and clear-cut masonry takeoff outsourcing services? Then look no further – Legacy Estimating is your best bet. With years of actual contractual work in the masonry industry, our experts are masters in making precise and detailed takeoffs for your next project.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= LUMBER ================= -->
+
+            <section class="trade-section alternate">
+
+                <h2>Lumber</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/lumber-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/lumber.jpg"
+                             alt="Lumber Estimating">
+
+                        <h3>
+                            Lumber Estimating
+                        </h3>
+
+                        <p>
+                           At Legacy Estimating, we have dedicated expert estimators for wood/lumber (woods and plastic) who have long-standing and proven expertise in the industry – working with general and sub-contractors worldwide.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/lumber-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/lumbers.jpg"
+                             alt="Lumber Takeoff">
+
+                        <h3>
+                            Lumber Takeoff
+                        </h3>
+
+                        <p>
+                            Are you a lumber framer, contractor, or vendor looking for the best and trustworthy lumber takeoff outsourcing services? Legacy Estimating is here to help!
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= METALS ================= -->
+
+            <section class="trade-section">
+
+                <h2>Metals</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/metals-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/metall.jpg"
+                             alt="Metals Estimating">
+
+                        <h3>
+                            Metals Estimating
+                        </h3>
+
+                        <p>
+                            Legacy Estimating offers reasonably priced, precise, and on-time structural steel, rebar, and miscellaneous metal estimating outsourcing services (Structural and Miscellaneous) for a complete scope of construction projects.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/metals-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/metalls.jpg"
+                             alt="Metals Takeoff">
+
+                        <h3>
+                            Metals Takeoff
+                        </h3>
+
+                        <p>
+                            Metals takeoff outsourcing services are normally known as takeoff or material takeoffs (MTO), and these are an important part of the estimation process.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= CONCRETE ================= -->
+
+            <section class="trade-section alternate">
+
+                <h2>Concrete</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/concrete-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/concret.jpg"
+                             alt="Concrete Estimating">
+
+                        <h3>
+                            Concrete Estimating
+                        </h3>
+
+                        <p>
+                            Concrete is used in massive amounts in the construction industry, and it is one of the primary materials needed to construct a building, including civil works.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/concrete-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/concretess.jpg"
+                             alt="Concrete Takeoff">
+
+                        <h3>
+                            Concrete Takeoff
+                        </h3>
+
+                        <p>
+                            Concrete estimation is one of the major part of any and most construction projects, owing to the fact that concrete is used to construct everything.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= ROOFING ================= -->
+
+            <section class="trade-section">
+
+                <h2>Roofing</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/roofing-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/rooo.jpg"
+                             alt="Roofing Estimating">
+
+                        <h3>
+                            Roofing Estimating
+                        </h3>
+
+                        <p>
+                            Are you looking for top and precise roofing estimating outsourcing services for your next roofing bid? If you want a detailed and precise roofing bid instantly, choose Legacy Estimating fast and cost-effective roofing takeoff outsourcing services.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/roofing-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/rooooo.jpg"
+                             alt="Roofing Takeoff">
+
+                        <h3>
+                            Roofing Takeoff
+                        </h3>
+
+                        <p>
+                            Are you looking for top and precise roofing estimating outsourcing services for your next roofing bid? If you want a detailed and precise roofing bid instantly, choose Legacy Estimating fast and cost-effective roofing takeoff outsourcing services
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= SITE WORK ================= -->
+
+            <section class="trade-section alternate">
+
+                <h2>Site Work</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/site-work-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/sitess.jpg"
+                             alt="Site Work Estimating">
+
+                        <h3>
+                            Site Work Estimating
+                        </h3>
+
+                        <p>
+                            Landscaping contractors, site work contractors, general contractors, sub-contractors, and land developers seek our site work estimating outsourcing services for precise, detailed, and accurate site work estimates                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/site-work-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/siteee.jpg"
+                             alt="Site Work Takeoff">
+
+                        <h3>
+                            Site Work Takeoff
+                        </h3>
+
+                        <p>
+                            Site Work Estimating Outsourcing Services refer to the total cost estimations that are needed to be made before the actual construction begins.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= INSULATION ================= -->
+
+            <section class="trade-section">
+
+                <h2>Insulation</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/insulation-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/insul.jpg"
+                             alt="Insulation Estimating">
+
+                        <h3>
+                            Insulation Estimating
+                        </h3>
+
+                        <p>
+                            Legacy Estimating offers you the most accurate, reliable, precise, and on-time insulation estimating outsourcing services to meet your bidding requirements smartly with deadlines beating the competition efficiently.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/insulation-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/insulat.jpg"
+                             alt="Insulation Takeoff">
+
+                        <h3>
+                            Insulation Takeoff
+                        </h3>
+
+                        <p>
+                            Legacy estimating offers detailed, precise and fast Insulation quantity estimation services in the shortest and quickest turnaround time with a promise of precision, quality and effectiveness.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= INTERIOR ================= -->
+
+            <section class="trade-section alternate">
+
+                <h2>Interior</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/interior-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/interi.jpg"
+                             alt="Interior Estimating">
+
+                        <h3>
+                            Interior Estimating
+                        </h3>
+
+                        <p>
+                           Interior & exterior finishes estimating outsourcing services are an important part of any construction process or project. Accurate plaster, painting, stucco, specialized coating estimations are important for winning bids and precisely quoting a price to the client for contractors.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/interior-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/interio.jpg"
+                             alt="Interior Takeoff">
+
+                        <h3>
+                            Interior Takeoff
+                        </h3>
+
+                        <p>
+                            Interior finishes, as well as exterior finishes, are one of the most important part in the construction of buildings. More often than not, these are the first aspects of a building anyone lays their eyes on – both inside and outside of the structure.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= FLOORING ================= -->
+
+            <section class="trade-section">
+
+                <h2>Flooring</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/flooring-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/flooo.jpg"
+                             alt="Flooring Estimating">
+
+                        <h3>
+                            Flooring Estimating
+                        </h3>
+
+                        <p>
+                            Flooring estimations may cause inconvenient disruptions while a construction project is underway. For a hassle-free experience, hire flooring estimating outsourcing services from an industry specialist company like Legacy Estimating.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/flooring-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/floooo.jpg"
+                             alt="Flooring Takeoff">
+
+                        <h3>
+                            Flooring Takeoff
+                        </h3>
+
+                        <p>
+                            A concise flooring takeoff includes a list of floor material quantities – categorized according to the type of floor finishes needed for the project.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+<!-- ================= FLOORING ================= -->
+
+            <section class="trade-section">
+
+                <h2>Painting</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/flooring-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/paintt.jpg"
+                             alt="Flooring Estimating">
+
+                        <h3>
+                            Painting Estimating
+                        </h3>
+
+                        <p>
+                           Painting estimating outsourcing services are always in demand for a commercial painting project in a focused and disciplined manner. At Legacy estimating, we house a team of experts to afford you qualitative painting takeoff outsourcing services
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/flooring-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/painttt.jpg"
+                             alt="Flooring Takeoff">
+
+                        <h3>
+                            Painting Takeoff
+                        </h3>
+
+                        <p>
+                            As expert painting contractors, our expert estimators fully recognize and understand the importance of unique details required when in the process of putting a painting project together with accurate painting takeoff outsourcing services.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+<!-- ================= Demolition ================= -->
+
+            <section class="trade-section">
+
+                <h2>Demolition</h2>
+
+                <div class="heading-line"></div>
+
+
+                <div class="trade-grid">
+
+
+                    <a href="trades/flooring-estimating.html"
+                       class="trade-card">
+
+                        <img src="images/demoo.jpg"
+                             alt="Flooring Estimating">
+
+                        <h3>
+                            Demolition Estimating
+                        </h3>
+
+                        <p>
+                            Are you looking for a demolition cost estimate and don’t know where to turn to? Don’t worry; Legacy Estimating is here to help! Legacy Estimating offers the best around accurate demolition estimating outsourcing services.
+                        </p>
+
+                    </a>
+
+
+
+                    <a href="trades/flooring-takeoff.html"
+                       class="trade-card">
+
+                        <img src="images/demooo.jpg"
+                             alt="Flooring Takeoff">
+
+                        <h3>
+                           Demolition Take-off
+                        </h3>
+
+                        <p>
+                            Legacy Estimating specializes in providing trusted, reliable, and accurate demolition take-off estimation services. Our service consists of offering clients information regarding the quantity of each material in construction needed to finish a job with finesse.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+        </main>
+
+
+
+        <!-- <!-- =================================================
+             RIGHT SIDE INFORMATION
+        ================================================= -->
+
+        <!-- <aside class="sidebar">
+
+
+            <div class="recent-posts">
+
+                <h3>
+                    Recent Posts
+                </h3>
+
+
+                <a href="trades/electrical-estimating.html">
+                    Electrical Estimating
+                </a>
+
+
+                <a href="trades/mechanical-estimating.html">
+                    Mechanical Estimating
+                </a>
+
+
+                <a href="trades/plumbing-estimating.html">
+                    Plumbing Estimating
+                </a>
+
+
+                <a href="trades/concrete-estimating.html">
+                    Concrete Estimating
+                </a>
+
+
+                <a href="trades/roofing-estimating.html">
+                    Roofing Estimating
+                </a>
+
+            </div> --> 
+
+<!-- 
+
+            <div class="sidebar-contact">
+
+                <h3>
+                    GET IN TOUCH WITH US:
+                </h3>
+
 
                 <p>
-                    Have a project that needs accurate estimating?
+                    You can contact us by email or phone
+                    using the information provided.
                 </p>
 
-                <a href="#" class="sidebar-btn">
+
+                <a href="contact.html"
+                   class="sidebar-btn">
+
                     Contact Us
+
                 </a>
 
             </div>
 
+
         </aside>
 
-    </main>
+
+    </div>
+
+</section> -->
 
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Legacy Estimating. All Rights Reserved.</p>
-    </footer>
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+
+        <!-- LEFT COLUMN -->
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="trades.html">Trades</a>
+
+            <a href="aboutus.html">About Us</a>
+
+            <a href="portfolio.html">Our Portfolio</a>
+
+            <a href="contact.html">Contact Us</a>
+
+
+            <h3 class="contact-title">
+                Contact Information
+            </h3>
+
+            <p class="contact-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                (718) 550-7786
+
+            </p>
+
+            <p class="contact-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                support@legacyestimating.us
+
+            </p>
+
+        </div>
+
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="footer-column">
+
+            <h3>Important Links</h3>
+
+            <a href="services.html">Services</a>
+
+            <a href="sample.html">Sample Estimates</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="terms.html">Terms & Conditions</a>
+
+
+            <h3 class="office-title">
+                Office Address
+            </h3>
+
+
+            <p class="address">
+
+                <img src="images/uk.png" alt="New York">
+
+                <span>
+                    190 West End Avenue, New York City, NY
+                </span>
+
+            </p>
+
+
+            <p class="address">
+
+                <img src="images/white.svg" alt="Texas">
+
+                <span>
+                    1446 Whitewater Dr, Little Elm, TX
+                </span>
+
+            </p>
+
+
+            <p class="address">
+
+                <img src="images/south.svg" alt="Florida">
+
+                <span>
+                    54 Southwest 36th Ct, Miami, FL
+                </span>
+
+            </p>
+
+
+            <p class="address">
+
+                <img src="images/india.svg" alt="Indiana">
+
+                <span>
+                    3740 N High School Rd, Indianapolis, IN
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =================================================
+     WHATSAPP
+================================================= -->
+
+<a href="https://wa.me/"
+   class="whatsapp"
+   target="_blank"
+   aria-label="WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    <span>
+        Whatsapp
+    </span>
+
+</a>
+
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
