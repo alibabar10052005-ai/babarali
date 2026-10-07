@@ -257,31 +257,6 @@ header.scrolled .nav-links a {
 }
 
 
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-.menu {
-    display: none;
-
-    width: 42px;
-
-    height: 42px;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: none;
-
-    background: transparent;
-
-    color: #0b1f33;
-
-    font-size: 23px;
-
-    cursor: pointer;
-}
 
 
 /* =========================
@@ -425,82 +400,255 @@ header.scrolled .nav-links a {
     margin-top: 0;
 }
 
+/* =========================================================
+   RESPONSIVE NAVBAR + SERVICES
+========================================================= */
 
-/* =========================
-   LAPTOP / LARGE SCREEN
-========================= */
+@media (max-width: 767px) {
 
-@media (min-width: 1200px) {
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .top-content {
+        padding: 8px 15px;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 11px;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+        height: 72px;
+        padding: 0 18px;
+    }
+
+    .img {
+        width: 155px;
+        height: 65px;
+    }
+
+    .img img {
+        width: 130px;
+        max-height: 58px;
+    }
+
+
+    /* =========================
+       HAMBURGER
+    ========================= */
+
+    .menu {
+        display: flex !important;
+
+        width: 42px;
+        height: 42px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        background: transparent;
+
+        color: #0b1f33;
+        font-size: 24px;
+
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+
+    /* =========================
+       MOBILE NAV LINKS
+    ========================= */
+
+    .nav-links {
+        position: absolute;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+
+        background: #ffffff;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 10px 20px 20px;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity .3s ease,
+            visibility .3s ease,
+            transform .3s ease;
+
+        box-shadow: 0 12px 25px rgba(11,31,51,.12);
+    }
+
+
+    .nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 14px 10px;
+
+        text-align: center;
+
+        font-size: 14px;
+    }
+
+
+    .nav-links a::after {
+        left: 30%;
+        width: 40%;
+    }
+
+
+    /* =========================
+       SERVICE SECTION
+    ========================= */
 
     .service-section {
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    .service-grid {
-        max-width: 1100px;
-        gap: 90px;
-    }
-
-    .service-item img {
-        width: 360px;
-        height: 240px;
-    }
-
-    .service-item h3 {
-        font-size: 22px;
-    }
-
-    .service-item p {
-        font-size: 15px;
-        max-width: 390px;
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    .service-section {
-        padding: 35px 20px 50px;
+        padding: 35px 18px 50px;
     }
 
     .service-section h2 {
-        font-size: 25px;
+        font-size: 24px;
         margin-bottom: 30px;
     }
 
+
+    /* =========================
+       HEADING
+    ========================= */
+
+    .portfolio-heading h1 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .heading-line {
+        width: 180px;
+        margin: 12px auto 28px;
+    }
+
+
+    /* =========================
+       SERVICE GRID
+    ========================= */
+
     .service-grid {
+        width: 100%;
+
         grid-template-columns: 1fr;
-        max-width: 400px;
+
         gap: 45px;
     }
+
+
+    /* =========================
+       SERVICE IMAGE
+    ========================= */
 
     .service-item img {
         width: 100%;
         max-width: 330px;
-        height: 210px;
+        height: 220px;
+
+        margin: 0 auto 18px;
+
+        border-radius: 14px;
     }
 
+
+    /* =========================
+       SERVICE TITLE
+    ========================= */
+
     .service-item h3 {
-        font-size: 20px;
+        font-size: 19px;
+        line-height: 1.35;
         margin-bottom: 10px;
     }
 
+
+    /* =========================
+       DESCRIPTION
+    ========================= */
+
     .service-item p {
+        max-width: 500px;
+
+        padding: 0 5px;
+
         font-size: 14px;
-        line-height: 1.6;
-        max-width: 340px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       COMMERCIAL
+    ========================= */
+
+    .commercial {
+        padding-top: 35px;
+        padding-bottom: 50px;
+    }
+
+
+    /* =========================
+       EXTRA SERVICES
+    ========================= */
+
+    .extra-services {
+        padding: 30px 18px 55px;
     }
 
     .upload-text {
         font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 15px;
     }
 
     .upload-btn {
+        padding: 11px 22px;
         font-size: 13px;
+        margin-bottom: 35px;
     }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+        padding: 45px 25px 50px;
+    }
+
+    .footer-column {
+        align-items: flex-start;
+    }
+
 }
