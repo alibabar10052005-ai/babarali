@@ -428,171 +428,546 @@ header.scrolled .nav-links a {
         }
 
 
-        /* =========================================
-           TABLET
-        ========================================= */
+/* =========================================================
+   RESPONSIVE DESIGN
+   TABLET + MOBILE + SMALL MOBILE
+========================================================= */
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) and (min-width: 768px) {
+
+    .top-content {
+        padding: 9px 25px;
+        gap: 22px;
+        font-size: 12px;
+    }
+
+    .navbar {
+        height: 82px;
+        padding: 0 25px;
+    }
+
+    .img {
+        width: 145px;
+        height: 75px;
+    }
+
+    .img img {
+        width: 115px;
+        max-height: 65px;
+    }
 
-        @media (max-width: 768px) {
+    .nav-links {
+        gap: 22px;
+    }
 
-            .top-content {
-                justify-content: center;
+    .nav-links a {
+        font-size: 12px;
+    }
 
-                flex-wrap: wrap;
+    .terms-title {
+        padding: 55px 25px 30px;
+    }
 
-                gap: 8px 20px;
+    .terms-title h1 {
+        font-size: 31px;
+    }
 
-                padding: 8px 15px;
-            }
+    .terms-line {
+        width: 90px;
+        height: 4px;
+    }
 
+    .terms-wrapper {
+        width: 90%;
+        max-width: 900px;
+        padding: 20px 0 60px;
+    }
 
-            .navbar {
-                height: auto;
+    .term {
+        gap: 16px;
+        margin-bottom: 22px;
+    }
 
-                min-height: 70px;
+    .number {
+        min-width: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
 
-                padding: 8px 20px;
+    .term-text p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
 
-                flex-direction: column;
-            }
+    .footer {
+        padding: 23px 20px;
+    }
 
+    .footer p {
+        font-size: 12px;
+    }
+}
 
-            .nav-links {
-                flex-wrap: wrap;
 
-                justify-content: center;
+/* =========================
+   MOBILE
+========================= */
 
-                gap: 10px 18px;
+@media (max-width: 767px) {
 
-                padding-bottom: 8px;
-            }
+    /* TOP BAR */
 
+    .top-content {
+        min-height: auto;
+        padding: 8px 15px;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 11px;
+    }
 
-            .nav-links a {
-                font-size: 11px;
-            }
 
+    /* NAVBAR */
 
-            .terms-title {
-                padding: 45px 20px 30px;
-            }
+    .navbar {
+        height: 72px;
+        padding: 0 18px;
+    }
 
+    .img {
+        width: 155px;
+        height: 65px;
+    }
 
-            .terms-title h1 {
-                font-size: 28px;
-            }
+    .img img {
+        width: 130px;
+        max-height: 58px;
+    }
 
 
-            .terms-wrapper {
-                width: 90%;
-            }
+    /* MENU BUTTON */
 
+    .menu {
+        display: flex !important;
 
-            .term {
-                gap: 13px;
+        width: 42px;
+        height: 42px;
 
-                margin-bottom: 20px;
-            }
+        align-items: center;
+        justify-content: center;
 
+        border: none;
+        background: transparent;
 
-            .number {
-                min-width: 31px;
-                height: 31px;
+        color: #0b1f33;
 
-                font-size: 12px;
-            }
+        font-size: 24px;
 
+        cursor: pointer;
 
-            .term-text p {
-                font-size: 14px;
+        z-index: 1100;
+    }
 
-                line-height: 1.7;
-            }
 
-        }
+    /* MOBILE NAV */
 
+    .nav-links {
+        position: absolute;
 
-        /* =========================================
-           MOBILE
-        ========================================= */
+        top: 72px;
+        left: 0;
 
-        @media (max-width: 480px) {
+        width: 100%;
 
-            .top-content {
-                flex-direction: column;
+        padding: 10px 20px 20px;
 
-                gap: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-                font-size: 11px;
-            }
+        gap: 0;
 
+        background: #ffffff;
 
-            .navbar {
-                padding: 8px 15px;
-            }
+        opacity: 0;
+        visibility: hidden;
 
+        transform: translateY(-10px);
 
-            .img {
-                height: 55px;
-            }
+        box-shadow:
+            0 12px 25px rgba(11, 31, 51, 0.12);
 
+        transition:
+            opacity .3s ease,
+            visibility .3s ease,
+            transform .3s ease;
+    }
 
-            .img img {
-                width: 105px;
-            }
+    .nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
+    .nav-links a {
+        width: 100%;
 
-            .nav-links {
-                gap: 8px 13px;
-            }
+        padding: 14px 10px;
 
+        text-align: center;
 
-            .nav-links a {
-                font-size: 10px;
-            }
+        font-size: 14px;
+    }
 
+    .nav-links a::after {
+        left: 30%;
+        width: 40%;
+    }
 
-            .terms-title {
-                padding: 35px 15px 25px;
-            }
 
+    /* SCROLLED NAVBAR */
 
-            .terms-title h1 {
-                font-size: 23px;
-            }
+    header.scrolled .navbar {
+        height: 62px;
+    }
 
+    header.scrolled .img {
+        width: 125px;
+        height: 58px;
+    }
 
-            .terms-line {
-                width: 80px;
-                height: 3px;
-            }
+    header.scrolled .img img {
+        width: 105px;
+        max-height: 52px;
+    }
 
+    header.scrolled .nav-links {
+        top: 62px;
+    }
 
-            .terms-wrapper {
-                width: 92%;
+    header.scrolled .nav-links a {
+        font-size: 13px;
+    }
 
-                padding-top: 10px;
-            }
 
+    /* TERMS TITLE */
 
-            .term {
-                gap: 10px;
+    .terms-title {
+        padding: 42px 18px 28px;
+    }
 
-                margin-bottom: 18px;
-            }
+    .terms-title h1 {
+        font-size: 27px;
+        line-height: 1.3;
+    }
 
+    .terms-line {
+        width: 85px;
+        height: 3px;
+        margin-top: 12px;
+    }
 
-            .number {
-                min-width: 27px;
-                height: 27px;
 
-                font-size: 10px;
-            }
+    /* TERMS CONTENT */
 
+    .terms-wrapper {
+        width: 100%;
+        max-width: 600px;
 
-            .term-text p {
-                font-size: 13px;
+        padding: 15px 18px 55px;
+    }
 
-                line-height: 1.65;
-            }
+    .term {
+        gap: 13px;
+        margin-bottom: 22px;
+    }
 
-        }
+    .number {
+        min-width: 34px;
+        width: 34px;
+        height: 34px;
+
+        font-size: 13px;
+    }
+
+    .term-text {
+        padding-top: 2px;
+        min-width: 0;
+    }
+
+    .term-text p {
+        font-size: 13px;
+        line-height: 1.8;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 22px 15px;
+    }
+
+    .footer p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 430px) {
+
+    .top-content {
+        padding: 8px 12px;
+        gap: 7px 14px;
+        font-size: 10px;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 14px;
+    }
+
+    .img {
+        width: 140px;
+        height: 63px;
+    }
+
+    .img img {
+        width: 120px;
+        max-height: 55px;
+    }
+
+    .menu {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+
+    .nav-links {
+        top: 70px;
+        padding: 8px 15px 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 13px 8px;
+    }
+
+
+    /* SCROLLED */
+
+    header.scrolled .navbar {
+        height: 60px;
+    }
+
+    header.scrolled .nav-links {
+        top: 60px;
+    }
+
+
+    /* TERMS TITLE */
+
+    .terms-title {
+        padding: 35px 14px 25px;
+    }
+
+    .terms-title h1 {
+        font-size: 23px;
+    }
+
+    .terms-line {
+        width: 75px;
+        height: 3px;
+    }
+
+
+    /* TERMS */
+
+    .terms-wrapper {
+        padding: 12px 14px 50px;
+    }
+
+    .term {
+        gap: 11px;
+        margin-bottom: 20px;
+    }
+
+    .number {
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
+    }
+
+    .term-text p {
+        font-size: 12.5px;
+        line-height: 1.75;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 20px 12px;
+    }
+
+    .footer p {
+        font-size: 10.5px;
+    }
+}
+
+
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    .top-content {
+        font-size: 9.5px;
+        gap: 5px 10px;
+    }
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .img {
+        width: 130px;
+    }
+
+    .img img {
+        width: 110px;
+    }
+
+    .menu {
+        width: 38px;
+        height: 38px;
+        font-size: 21px;
+    }
+
+    .nav-links a {
+        font-size: 12.5px;
+        padding: 12px 8px;
+    }
+
+
+    /* TERMS TITLE */
+
+    .terms-title {
+        padding: 30px 10px 22px;
+    }
+
+    .terms-title h1 {
+        font-size: 21px;
+    }
+
+    .terms-line {
+        width: 65px;
+        height: 3px;
+    }
+
+
+    /* TERMS */
+
+    .terms-wrapper {
+        width: 100%;
+        padding: 10px 10px 45px;
+    }
+
+    .term {
+        gap: 9px;
+        margin-bottom: 18px;
+    }
+
+    .number {
+        min-width: 30px;
+        width: 30px;
+        height: 30px;
+
+        font-size: 11px;
+    }
+
+    .term-text p {
+        font-size: 11.5px;
+        line-height: 1.7;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 18px 10px;
+    }
+
+    .footer p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================
+   MOBILE LANDSCAPE
+========================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .navbar {
+        height: 65px;
+    }
+
+    .img {
+        height: 60px;
+    }
+
+    .img img {
+        width: 120px;
+        max-height: 52px;
+    }
+
+    .nav-links {
+        top: 65px;
+        max-height: calc(100vh - 65px);
+        overflow-y: auto;
+    }
+
+    header.scrolled .nav-links {
+        top: 58px;
+    }
+
+    .terms-title {
+        padding-top: 35px;
+    }
+
+    .terms-title h1 {
+        font-size: 26px;
+    }
+
+    .terms-wrapper {
+        max-width: 750px;
+        padding-bottom: 50px;
+    }
+
+    .term-text p {
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+}
