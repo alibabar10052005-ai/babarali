@@ -448,89 +448,94 @@ header.scrolled .nav-links a {
 
 
 /* =========================================================
-   PORTFOLIO RESPONSIVE DESIGN
-   MODERN NAVBAR + MOBILE MENU
+   PORTFOLIO RESPONSIVE MEDIA QUERIES
+   Desktop/Laptop CSS ko touch nahi karega
 ========================================================= */
 
 
 /* =========================================================
-   TABLET / MOBILE
+   TABLET
+   768px - 1000px
+========================================================= */
+
+@media (max-width: 1000px) and (min-width: 768px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .port {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .image-box {
+        height: 280px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   767px AND BELOW
 ========================================================= */
 
 @media (max-width: 767px) {
 
-    /* =========================
-       TOP CONTACT BAR
-    ========================= */
+    /* TOP BAR */
 
     .top-content {
         padding: 8px 15px;
-
         justify-content: center;
-
-        align-items: center;
-
         gap: 15px;
-
         flex-wrap: wrap;
-
         font-size: 11px;
     }
 
 
-    /* =========================
-       NAVBAR
-    ========================= */
+    /* NAVBAR */
 
     .navbar {
         height: 72px;
-
         padding: 0 18px;
     }
 
 
-    /* =========================
-       LOGO
-    ========================= */
+    /* LOGO */
 
     .img {
         width: 155px;
-
         height: 65px;
-
-        display: flex;
-
-        align-items: center;
-
-        flex-shrink: 0;
     }
 
     .img img {
         width: 130px;
-
         max-height: 58px;
-
-        object-fit: contain;
     }
 
 
-    /* =========================
-       HAMBURGER
-    ========================= */
+    /* MENU BUTTON */
 
     .menu {
         display: flex !important;
 
         width: 42px;
-
         height: 42px;
 
         align-items: center;
-
         justify-content: center;
 
         border: none;
-
         background: transparent;
 
         color: #0b1f33;
@@ -543,33 +548,27 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
-       MOBILE NAVIGATION
-    ========================= */
+    /* MOBILE MENU */
 
     .nav-links {
         position: absolute;
 
         top: 72px;
-
         left: 0;
 
         width: 100%;
 
-        background: #ffffff;
+        padding: 10px 20px 20px;
 
         display: flex;
-
         flex-direction: column;
-
         align-items: center;
 
         gap: 0;
 
-        padding: 10px 20px 20px;
+        background: #ffffff;
 
         opacity: 0;
-
         visibility: hidden;
 
         transform: translateY(-10px);
@@ -583,19 +582,11 @@ header.scrolled .nav-links a {
             transform .3s ease;
     }
 
-
-    /* OPEN */
-
     .nav-links.show {
         opacity: 1;
-
         visibility: visible;
-
         transform: translateY(0);
     }
-
-
-    /* LINKS */
 
     .nav-links a {
         width: 100%;
@@ -607,141 +598,117 @@ header.scrolled .nav-links a {
         font-size: 14px;
     }
 
-
     .nav-links a::after {
         left: 30%;
-
         width: 40%;
     }
 
 
-    /* =========================
-       PORTFOLIO HEADING
-    ========================= */
+    /* SCROLLED NAV */
+
+    header.scrolled .navbar {
+        height: 62px;
+    }
+
+    header.scrolled .img {
+        width: 125px;
+        height: 58px;
+    }
+
+    header.scrolled .img img {
+        width: 105px;
+        max-height: 52px;
+    }
+
+    header.scrolled .nav-links {
+        top: 62px;
+    }
+
+    header.scrolled .nav-links a {
+        font-size: 13px;
+    }
+
+
+    /* PORTFOLIO HEADING */
 
     .portfolio-heading {
         padding: 45px 20px 30px;
-
-        text-align: center;
     }
-
 
     .portfolio-heading h1 {
         font-size: 28px;
-
-        line-height: 1.3;
     }
-
 
     .portfolio-heading p {
         font-size: 13px;
-
-        line-height: 1.6;
-
-        padding: 0 10px;
     }
-
 
     .heading-line {
-        width: 180px;
-
+        width: 85px;
         height: 3px;
-
-        margin: 12px auto 14px;
     }
 
 
-    /* =========================
-       PORTFOLIO GRID
-    ========================= */
+    /* PORTFOLIO ONE COLUMN */
 
     .port {
-        width: 100%;
-
-        padding: 10px 20px 55px;
-
-        display: grid;
-
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 30px;
+
+        padding: 10px 15px 55px;
     }
 
 
-    /* =========================
-       PORTFOLIO CARD
-    ========================= */
+    /* IMAGE FULL WIDTH */
 
     .portfolio-card {
         width: 100%;
-
-        max-width: 430px;
-
+        max-width: 100%;
         margin: 0 auto;
-
-        text-align: center;
     }
-
-
-    /* =========================
-       IMAGE BOX
-    ========================= */
 
     .image-box {
         width: 100%;
 
-        overflow: hidden;
+        height: auto;
 
-        border-radius: 14px;
+        min-height: 260px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: #0b1f33;
     }
-
 
     .image-box img {
         width: 100%;
 
         height: auto;
 
-        display: block;
+        min-height: 260px;
 
-        object-fit: cover;
+        max-height: 430px;
 
-        transition:
-            transform .45s ease,
-            filter .45s ease;
+        object-fit: contain;
     }
 
 
-    /* =========================
-       MODERN IMAGE HOVER
-    ========================= */
-
-    .portfolio-card:hover .image-box img {
-        transform: scale(1.05);
-
-        filter:
-            saturate(1.06)
-            contrast(1.03);
-    }
-
-
-    /* =========================
-       CARD TITLE
-    ========================= */
+    /* TITLE */
 
     .portfolio-card h3 {
-        font-size: 18px;
+        left: 18px;
+        right: 18px;
 
-        line-height: 1.4;
+        bottom: 16px;
 
-        margin-top: 15px;
-
-        color: #102f49;
+        font-size: 17px;
     }
 
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     .footer-container {
         grid-template-columns: 1fr;
@@ -751,91 +718,15 @@ header.scrolled .nav-links a {
         padding: 45px 25px 50px;
     }
 
-
-    .footer-column {
-        align-items: flex-start;
-    }
-
-
-    .footer-column h3 {
-        font-size: 17px;
-
-        margin-bottom: 25px;
-    }
-
-
-    .footer-column a {
-        font-size: 13px;
-
-        margin-bottom: 14px;
-    }
-
-
-    .contact-item {
-        font-size: 13px;
-
-        line-height: 1.6;
-    }
-
-
-    .address {
-        font-size: 12.5px;
-
-        gap: 10px;
-
-        line-height: 1.5;
-    }
-
-
-    .address img {
-        width: 30px;
-
-        height: 20px;
-    }
-
-
-    /* =========================
-       SCROLLED NAVBAR
-    ========================= */
-
-    header.scrolled .navbar {
-        height: 62px;
-    }
-
-
-    header.scrolled .img {
-        width: 125px;
-
-        height: 58px;
-    }
-
-
-    header.scrolled .img img {
-        width: 105px;
-
-        max-height: 52px;
-    }
-
-
-    header.scrolled .nav-links {
-        top: 62px;
-    }
-
-
-    header.scrolled .nav-links a {
-        font-size: 13px;
-    }
-
 }
 
 
 /* =========================================================
    SMALL MOBILE
+   430px AND BELOW
 ========================================================= */
 
 @media (max-width: 430px) {
-
-    /* TOP BAR */
 
     .top-content {
         padding: 8px 12px;
@@ -845,108 +736,81 @@ header.scrolled .nav-links a {
         font-size: 10px;
     }
 
-
-    /* NAVBAR */
-
     .navbar {
         height: 70px;
-
         padding: 0 14px;
     }
 
-
-    /* LOGO */
-
     .img {
         width: 140px;
-
         height: 63px;
     }
 
-
     .img img {
         width: 120px;
-
         max-height: 55px;
     }
 
-
-    /* MENU */
-
     .menu {
         width: 40px;
-
         height: 40px;
-
         font-size: 22px;
     }
 
 
-    /* MOBILE NAV */
+    /* MOBILE MENU */
 
     .nav-links {
         top: 70px;
-
         padding: 8px 15px 18px;
     }
 
-
     .nav-links a {
         font-size: 13px;
-
         padding: 13px 8px;
     }
 
 
-    /* PORTFOLIO HEADING */
+    /* HEADING */
 
     .portfolio-heading {
         padding: 35px 15px 25px;
     }
 
-
     .portfolio-heading h1 {
         font-size: 23px;
     }
 
-
     .portfolio-heading p {
         font-size: 12.5px;
-
-        line-height: 1.6;
     }
 
 
-    .heading-line {
-        width: 110px;
-
-        height: 3px;
-    }
-
-
-    /* PORTFOLIO */
+    /* IMAGE */
 
     .port {
-        padding: 10px 15px 50px;
+        padding-left: 10px;
+        padding-right: 10px;
 
-        gap: 30px;
+        gap: 25px;
     }
-
-
-    .portfolio-card {
-        max-width: 100%;
-    }
-
 
     .image-box {
-        border-radius: 12px;
+        min-height: 250px;
     }
 
+    .image-box img {
+        min-height: 250px;
+        max-height: 400px;
+    }
 
     .portfolio-card h3 {
-        font-size: 17px;
+        left: 16px;
+        right: 16px;
 
-        margin-top: 13px;
+        bottom: 15px;
+
+        font-size: 16px;
     }
 
 
@@ -954,123 +818,85 @@ header.scrolled .nav-links a {
 
     .footer-container {
         padding: 40px 20px 45px;
-
         gap: 40px;
     }
-
-
-    .footer-column h3 {
-        font-size: 16px;
-
-        margin-bottom: 22px;
-    }
-
-
-    .footer-column a {
-        font-size: 12.5px;
-
-        margin-bottom: 13px;
-    }
-
-
-    .contact-item {
-        font-size: 12.5px;
-    }
-
-
-    .address {
-        font-size: 12px;
-
-        align-items: flex-start;
-    }
-
-
-    .address img {
-        width: 28px;
-
-        height: 19px;
-    }
-
 }
 
 
 /* =========================================================
    VERY SMALL MOBILE
+   360px AND BELOW
 ========================================================= */
 
 @media (max-width: 360px) {
 
     .top-content {
         font-size: 9.5px;
-
         gap: 5px 10px;
     }
-
 
     .navbar {
         padding: 0 12px;
     }
 
-
     .img {
         width: 130px;
     }
-
 
     .img img {
         width: 110px;
     }
 
-
     .menu {
         width: 38px;
-
         height: 38px;
-
         font-size: 21px;
     }
 
 
+    /* MENU */
+
     .nav-links a {
         font-size: 12.5px;
-
         padding: 12px 8px;
     }
 
 
+    /* HEADING */
+
     .portfolio-heading h1 {
         font-size: 21px;
     }
-
 
     .portfolio-heading p {
         font-size: 12px;
     }
 
 
-    .portfolio-card h3 {
-        font-size: 16px;
-    }
-
+    /* IMAGE */
 
     .port {
-        padding-left: 12px;
-
-        padding-right: 12px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
-
-    .footer-container {
-        padding-left: 17px;
-
-        padding-right: 17px;
+    .image-box {
+        min-height: 230px;
     }
 
-
-    .address {
-        font-size: 11.5px;
+    .image-box img {
+        min-height: 230px;
+        max-height: 350px;
     }
 
+    .portfolio-card h3 {
+        left: 14px;
+        right: 14px;
+
+        bottom: 13px;
+
+        font-size: 15px;
+    }
 }
 
 
@@ -1084,18 +910,14 @@ header.scrolled .nav-links a {
         height: 65px;
     }
 
-
     .img {
         height: 60px;
     }
 
-
     .img img {
         width: 120px;
-
         max-height: 52px;
     }
-
 
     .nav-links {
         top: 65px;
@@ -1105,14 +927,16 @@ header.scrolled .nav-links a {
         overflow-y: auto;
     }
 
-
     header.scrolled .nav-links {
         top: 58px;
     }
 
-
-    .portfolio-heading {
-        padding-top: 30px;
+    .image-box {
+        min-height: 300px;
     }
 
+    .image-box img {
+        min-height: 300px;
+        max-height: 450px;
+    }
 }
