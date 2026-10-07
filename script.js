@@ -366,7 +366,68 @@ window.addEventListener("resize", function () {
 });
 
 
+/* =========================================================
+   GOOGLE REVIEWS - MOBILE TOUCH SWIPE
+========================================================= */
 
+if (reviewsTrack) {
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    reviewsTrack.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStartX = event.touches[0].clientX;
+
+        },
+        { passive: true }
+    );
+
+
+    reviewsTrack.addEventListener(
+        "touchend",
+        function (event) {
+
+            touchEndX = event.changedTouches[0].clientX;
+
+            const difference = touchStartX - touchEndX;
+
+            if (Math.abs(difference) < 50) {
+                return;
+            }
+
+            const card = reviewsTrack.querySelector(".review-card");
+
+            if (!card) {
+                return;
+            }
+
+            const cardWidth = card.offsetWidth + 14;
+
+            if (difference > 0) {
+                reviewIndex++;
+            } else {
+                reviewIndex--;
+            }
+
+            if (reviewIndex < 0) {
+                reviewIndex = reviewCards.length - 1;
+            }
+
+            if (reviewIndex >= reviewCards.length) {
+                reviewIndex = 0;
+            }
+
+            reviewsTrack.style.transform =
+                `translateX(-${reviewIndex * cardWidth}px)`;
+
+        },
+        { passive: true }
+    );
+
+}
 
 
 
