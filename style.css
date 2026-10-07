@@ -2666,284 +2666,171 @@ header.scrolled .nav-links a {
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   320px - 360px
+   RESPONSIVE MEDIA QUERIES
 ========================================================= */
 
-@media (max-width: 360px) {
 
-    .hero {
-        height: 220px;
+/* =========================================================
+   TABLET - 768px to 1024px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ---------- TOP BAR ---------- */
+
+    .top-content {
+        padding: 9px 20px;
+        gap: 20px;
     }
 
-    .portfolio-heading h1 {
-        font-size: 21px;
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 78px;
+        padding: 0 22px;
     }
 
-    .about-box {
-        grid-template-columns: 90px 1fr;
-        gap: 11px;
+    .img {
+        width: 150px;
+        height: 70px;
     }
 
-    .about-image img {
-        width: 88px;
+    .img img {
+        width: 125px;
+        max-height: 62px;
     }
 
-    .about-content p {
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
         font-size: 11px;
     }
 
-    .card-image {
-        height: 210px;
-    }
 
-    .counter-box h2 {
-        font-size: 23px;
-    }
-
-    .counter-box p {
-        font-size: 9px;
-    }
-
-    .footer-container {
-        gap: 25px 12px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE LANDSCAPE
-========================================================= */
-
-@media (max-width: 767px) and (orientation: landscape) {
+    /* ---------- HERO ---------- */
 
     .hero {
-        height: 330px;
+        height: 450px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about {
+        padding: 30px 4% 55px;
     }
 
     .about-box {
-        grid-template-columns: 150px 1fr;
+        grid-template-columns: 210px 1fr;
+        gap: 30px;
     }
 
     .about-image img {
-        width: 140px;
+        width: 190px;
     }
+
+    .about-content p,
+    .about-text p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- SERVICES ---------- */
 
     .services-cards {
         grid-template-columns: 1fr 1fr;
-        max-width: 700px;
+        gap: 20px;
+        padding: 0 20px;
     }
 
     .card-image {
-        height: 230px;
+        height: 330px;
     }
+
+
+    /* ---------- SOFTWARE ---------- */
+
+    .trade-image {
+        gap: 25px;
+    }
+
+    .trade-image img {
+        max-width: 200px;
+    }
+
+
+    /* ---------- FEATURES ---------- */
 
     .features {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 35px;
+        row-gap: 35px;
+        padding: 5px 25px 50px;
     }
 
-    .counter-section {
-        grid-template-columns: repeat(3, 1fr);
+
+    /* ---------- REVIEWS ---------- */
+
+    .reviews-container {
+        gap: 25px;
+        padding: 0 25px;
     }
+
+
+    /* ---------- COUNTERS ---------- */
+
+    .counter-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 50px 25px;
+    }
+
+    .counter-box {
+        width: 100%;
+    }
+
+
+    /* ---------- FOOTER ---------- */
 
     .footer-container {
         grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding: 45px 30px;
     }
-
 }
 
 
 /* =========================================================
-   TOUCH SCREEN
-========================================================= */
-
-@media (hover: none) and (pointer: coarse) {
-
-    .service-card:hover,
-    .feature:hover,
-    .review-card:hover,
-    .about-image img:hover,
-    .trade-image img:hover {
-        transform: none;
-    }
-
-}
-
-
-
-
-
-
-/* =========================================================
-   MOBILE NAVIGATION
+   MOBILE - 767px AND BELOW
 ========================================================= */
 
 @media (max-width: 767px) {
 
+    /* ---------- TOP BAR ---------- */
+
+    .top-content {
+        padding: 8px 12px;
+        justify-content: center;
+        gap: 15px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
     header {
         position: sticky;
         top: 0;
-        z-index: 9999;
     }
 
     .navbar {
         height: 68px;
-        padding: 0 18px;
-        position: relative;
-    }
-
-    .img {
-        width: 145px;
-        height: 62px;
-    }
-
-    .img img {
-        width: 120px;
-        max-height: 55px;
-    }
-
-    /* MENU BUTTON */
-
-    .menu {
-        display: flex;
-        width: 42px;
-        height: 42px;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        outline: none;
-        background: transparent;
-        color: #0b1f33;
-        font-size: 23px;
-        cursor: pointer;
-        z-index: 10002;
-        flex-shrink: 0;
-    }
-
-    .menu i {
-        transition: transform 0.3s ease;
-    }
-
-    .menu.active i {
-        transform: rotate(90deg);
-    }
-
-
-    /* NAVIGATION DROPDOWN */
-
-    .nav-links {
-        display: none;
-
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-
-        width: 100%;
-
-        padding: 10px 18px 16px;
-
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-
-        background: rgba(255, 255, 255, 0.98);
-
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-
-        border-top: 1px solid #edf0f3;
-
-        box-shadow:
-            0 15px 30px rgba(11, 31, 51, 0.14);
-
-        z-index: 10001;
-    }
-
-
-    /* OPEN MENU */
-
-    .nav-links.show {
-        display: flex;
-    }
-
-
-    /* NAV LINKS */
-
-    .nav-links a {
-        display: block;
-
-        width: 100%;
-
-        padding: 13px 8px;
-
-        color: #29445c;
-
-        font-size: 13px;
-        font-weight: 600;
-
-        text-decoration: none;
-
-        border-bottom: 1px solid #edf0f3;
-
-        transition:
-            color 0.25s ease,
-            background 0.25s ease,
-            padding-left 0.25s ease;
-    }
-
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-
-    .nav-links a::after {
-        display: none;
-    }
-
-
-    .nav-links a:hover,
-    .nav-links a.active {
-        color: #b48632;
-        background: #f8fafc;
-        padding-left: 14px;
-    }
-
-
-    /* SCROLLED HEADER */
-
-    header.scrolled .navbar {
-        height: 62px;
-    }
-
-    header.scrolled .img {
-        width: 125px;
-        height: 58px;
-    }
-
-    header.scrolled .img img {
-        width: 105px;
-        max-height: 50px;
-    }
-
-    header.scrolled .nav-links {
-        top: 62px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 430px) {
-
-    .navbar {
-        height: 64px;
-        padding: 0 14px;
+        padding: 0 15px;
     }
 
     .img {
@@ -2957,637 +2844,577 @@ header.scrolled .nav-links a {
     }
 
     .menu {
-        width: 40px;
-        height: 40px;
-        font-size: 21px;
+        display: flex;
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
     }
 
     .nav-links {
-        top: 64px;
-        padding: 8px 14px 14px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        background: rgba(255, 255, 255, 0.98);
+
+        padding: 10px 20px 15px;
+
+        gap: 0;
+
+        box-shadow: 0 12px 25px rgba(11, 31, 51, 0.12);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-links a {
-        padding: 12px 7px;
-        font-size: 12.5px;
+        width: 100%;
+        padding: 13px 5px;
+        font-size: 13px;
+        border-bottom: 1px solid #edf0f4;
     }
 
-    header.scrolled .nav-links {
-        top: 60px;
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 
-}
 
+    /* ---------- HERO ---------- */
 
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 360px) {
-
-    .navbar {
-        padding: 0 11px;
+    .hero {
+        height: 300px;
     }
 
-    .img {
-        width: 120px;
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .img img {
-        width: 100px;
+    .arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
     }
 
-    .nav-links a {
-        font-size: 12px;
-        padding: 11px 6px;
+    .arrow.prev {
+        left: 12px;
     }
 
-}
+    .arrow.next {
+        right: 12px;
+    }
+
+    .dots {
+        bottom: 12px;
+    }
 
 
+    /* ---------- ABOUT ---------- */
 
+    .about {
+        padding: 25px 18px 45px;
+    }
 
-/* =========================================================
-   FINAL RESPONSIVE FIX
-   MOBILE + TABLET + LAPTOP
-========================================================= */
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-}
-
-
-/* =========================================================
-   SOFTWARE WE USE
-========================================================= */
-
-.software,
-.software-section,
-.tools-section,
-.tools-grid {
-    max-width: 1250px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.software-list,
-.software-items,
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-}
-
-
-/* =========================================================
-   WHY CHOOSE US / FEATURES
-========================================================= */
-
-.features {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 20px 25px 65px;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    column-gap: 35px;
-    row-gap: 35px;
-}
-
-.feature,
-.feature-box,
-.feature-card {
-    width: 100%;
-    min-width: 0;
-}
-
-
-/* =========================================================
-   GOOGLE REVIEWS
-========================================================= */
-
-.google-reviews,
-.reviews-section {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.reviews-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.reviews-track {
-    display: flex;
-    gap: 18px;
-
-    width: max-content;
-
-    transition: transform 0.45s ease;
-
-    /* MOBILE TOUCH */
-    touch-action: pan-y;
-    user-select: none;
-    -webkit-user-select: none;
-    cursor: grab;
-}
-
-.reviews-track:active {
-    cursor: grabbing;
-}
-
-.review-card {
-    flex: 0 0 calc((100vw - 80px) / 4);
-    max-width: 300px;
-    min-width: 250px;
-}
-
-
-/* =========================================================
-   RECENT PROJECTS
-========================================================= */
-
-.recent-projects,
-.projects-section {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.projects-grid,
-.recent-projects-grid,
-.project-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 28px;
-
-    width: 100%;
-}
-
-.project-card,
-.recent-project-card {
-    width: 100%;
-    min-width: 0;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.site-footer {
-    width: 100%;
-    overflow: hidden;
-}
-
-.footer-container {
-    width: 100%;
-    max-width: 1500px;
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 60px;
-
-    padding: 55px 45px 60px;
-}
-
-.footer-column {
-    width: 100%;
-    min-width: 0;
-}
-
-.footer-column p,
-.footer-column a,
-.footer-column li {
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   TABLETS
-========================================================= */
-
-@media (max-width: 1024px) {
-
-    /* SOFTWARE */
-
-    .software-list,
-    .software-items,
-    .tools-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .about-box {
+        grid-template-columns: 105px 1fr;
         gap: 18px;
     }
 
+    .about-image img {
+        width: 100px;
+    }
 
-    /* WHY CHOOSE US */
+    .about-content p,
+    .about-text p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
 
-    .features {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px;
-        padding-left: 25px;
-        padding-right: 25px;
+    .about-text {
+        margin-top: 28px;
     }
 
 
-    /* RECENT PROJECTS */
+    /* ---------- SERVICES ---------- */
 
-    .projects-grid,
-    .recent-projects-grid,
-    .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-    }
-
-
-    /* REVIEWS */
-
-    .review-card {
-        flex: 0 0 calc((100vw - 75px) / 2);
-        max-width: none;
-    }
-
-
-    /* FOOTER */
-
-    .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 40px;
-        padding: 45px 30px 50px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 767px) {
-
-    /* GENERAL */
-
-    section {
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-
-    /* =====================================================
-       SOFTWARE WE USE
-    ===================================================== */
-
-    .software,
-    .software-section,
-    .tools-section {
-        width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .software-list,
-    .software-items,
-    .tools-grid {
-        display: flex;
-
-        width: 100%;
-
+    .services-cards {
+        grid-template-columns: 1fr 1fr;
         gap: 12px;
-
-        overflow-x: auto;
-
-        padding: 5px 2px 12px;
-
-        scroll-snap-type: x mandatory;
-
-        -webkit-overflow-scrolling: touch;
-
-        scrollbar-width: none;
+        padding: 0 12px;
+        margin-top: 25px;
     }
 
-    .software-list::-webkit-scrollbar,
-    .software-items::-webkit-scrollbar,
-    .tools-grid::-webkit-scrollbar {
-        display: none;
+    .service-card {
+        border-radius: 12px;
     }
 
-    .software-list > *,
-    .software-items > *,
-    .tools-grid > * {
-        flex: 0 0 145px;
+    .card-image {
+        height: 220px;
+    }
 
-        scroll-snap-align: start;
+    .card-image span {
+        bottom: 12px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
 
-        min-width: 145px;
+    .card-content {
+        padding: 15px 12px;
+        min-height: 110px;
+    }
+
+    .card-content p {
+        font-size: 11px;
+        line-height: 1.6;
     }
 
 
-    /* =====================================================
-       WHY CHOOSE US
-    ===================================================== */
+    /* ---------- SOFTWARE ---------- */
+
+    .trades {
+        padding: 40px 15px 45px;
+    }
+
+    .trade-image {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .trade-image img {
+        width: 100%;
+        max-width: 150px;
+        height: 90px;
+        object-fit: contain;
+    }
+
+
+    /* ---------- FEATURES ---------- */
 
     .features {
-        width: 100%;
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 15px;
-
-        padding: 10px 15px 45px;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+        row-gap: 25px;
+        padding: 5px 15px 45px;
     }
 
-    .feature,
-    .feature-box,
-    .feature-card {
-        width: 100%;
-        min-width: 0;
+    .feature {
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .feature i {
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    .feature h2 {
+        font-size: 13px;
+        line-height: 1.25;
+    }
+
+    .feature p {
+        font-size: 10px;
+        line-height: 1.5;
     }
 
 
-    /* =====================================================
-       GOOGLE REVIEWS
-    ===================================================== */
+    /* ---------- GOOGLE REVIEWS ---------- */
 
-    .google-reviews,
-    .reviews-section {
+    .google-reviews {
+        padding: 35px 12px;
+    }
+
+    .reviews-heading h2 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .reviews-container {
+        display: block;
+        padding: 0;
+    }
+
+    .google-score {
+        margin-bottom: 20px;
+    }
+
+    .reviews-slider {
         width: 100%;
-
-        padding-left: 0;
-        padding-right: 0;
-
         overflow: hidden;
-    }
-
-    .reviews-wrapper {
-        width: 100%;
-
-        overflow: hidden;
-
         touch-action: pan-y;
     }
 
     .reviews-track {
-
+        display: flex;
         gap: 14px;
-
         width: max-content;
-
-        transform: translateX(0);
-
-        transition: transform 0.35s ease;
-
-        cursor: grab;
-
-        touch-action: pan-y;
-
-        -webkit-overflow-scrolling: touch;
+        transition: transform 0.45s ease;
+        will-change: transform;
     }
 
     .review-card {
+        flex: 0 0 calc(100vw - 30px);
+        width: calc(100vw - 30px);
+    }
 
-        flex: 0 0 calc(100vw - 40px);
 
-        width: calc(100vw - 40px);
+    /* ---------- RECENT PROJECTS ---------- */
 
-        max-width: none;
+    .recent-project-heading {
+        width: 100%;
+        text-align: center;
+        padding: 0 15px;
+    }
 
-        min-width: 0;
-
-        margin: 0;
-
-        scroll-snap-align: center;
+    .recent-project-heading h2 {
+        font-size: 22px;
+        white-space: nowrap;
     }
 
 
     /* =====================================================
-       RECENT PROJECTS
+       COUNTERS - ONE PER ROW
     ===================================================== */
 
-    .recent-projects,
-    .projects-section {
-
+    .counter-section {
         width: 100%;
-
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .projects-grid,
-    .recent-projects-grid,
-    .project-grid {
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        /* ONE COUNTER PER ROW */
+        grid-template-columns: 1fr;
 
-        gap: 14px;
+        gap: 0;
 
-        width: 100%;
+        padding: 20px 15px;
+
+        text-align: center;
     }
 
-    .project-card,
-    .recent-project-card {
-
+    .counter-box {
         width: 100%;
 
-        min-width: 0;
+        padding: 22px 10px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .project-card img,
-    .recent-project-card img {
+    .counter-box:last-child {
+        border-bottom: none;
+    }
 
-        width: 100%;
+    .counter-box i {
+        font-size: 20px;
+    }
 
-        height: auto;
+    .counter-box h2 {
+        font-size: 28px;
+        margin: 7px 0 4px;
+    }
 
-        object-fit: cover;
+    .counter-box p {
+        font-size: 12px;
+        margin: 0;
     }
 
 
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+    /* ---------- FOOTER ---------- */
 
     .footer-container {
-
-        width: 100%;
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 28px 18px;
-
-        padding: 40px 18px 35px;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 35px 18px 40px;
     }
 
-    .footer-column {
-
-        width: 100%;
-
-        min-width: 0;
-
-        align-items: flex-start;
-    }
-
-    .footer-column h3,
-    .footer-column h4 {
-
+    .footer-column h3 {
         font-size: 14px;
-
-        margin-bottom: 12px;
     }
 
-    .footer-column p,
     .footer-column a,
-    .footer-column li {
-
-        font-size: 12px;
-
-        line-height: 1.7;
+    .contact-item,
+    .address {
+        font-size: 10px;
+        line-height: 1.5;
     }
 
+    .address {
+        gap: 7px;
+    }
+
+    .address img {
+        width: 22px;
+        flex-shrink: 0;
+    }
 }
 
 
 /* =========================================================
-   SMALL PHONES
+   SMALL MOBILE - 430px AND BELOW
 ========================================================= */
 
 @media (max-width: 430px) {
 
-    /* SOFTWARE */
-
-    .software-list > *,
-    .software-items > *,
-    .tools-grid > * {
-
-        flex: 0 0 135px;
-
-        min-width: 135px;
+    .top-content {
+        gap: 8px;
+        font-size: 9px;
     }
 
 
-    /* WHY CHOOSE US */
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 62px;
+        padding: 0 12px;
+    }
+
+    .img {
+        width: 115px;
+        height: 55px;
+    }
+
+    .img img {
+        width: 100px;
+        max-height: 48px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        height: 275px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .about-box {
+        grid-template-columns: 90px 1fr;
+        gap: 14px;
+    }
+
+    .about-image img {
+        width: 85px;
+    }
+
+    .about-content p,
+    .about-text p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- SERVICES ---------- */
+
+    .services-cards {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .card-image {
+        height: 190px;
+    }
+
+    .card-image span {
+        font-size: 10px;
+    }
+
+    .card-content {
+        padding: 12px 10px;
+    }
+
+    .card-content p {
+        font-size: 10px;
+    }
+
+
+    /* ---------- SOFTWARE ---------- */
+
+    .trade-image {
+        gap: 12px;
+    }
+
+    .trade-image img {
+        max-width: 135px;
+        height: 80px;
+    }
+
+
+    /* ---------- FEATURES ---------- */
 
     .features {
+        column-gap: 10px;
+        row-gap: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .feature {
+        gap: 7px;
+    }
 
-        gap: 12px;
+    .feature i {
+        font-size: 17px;
+    }
 
-        padding-left: 12px;
-        padding-right: 12px;
+    .feature h2 {
+        font-size: 11px;
+    }
+
+    .feature p {
+        font-size: 9px;
     }
 
 
-    /* PROJECTS */
+    /* ---------- REVIEWS ---------- */
 
-    .projects-grid,
-    .recent-projects-grid,
-    .project-grid {
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 10px;
+    .reviews-heading h2 {
+        font-size: 18px;
     }
-
-
-    /* REVIEWS */
 
     .review-card {
-
-        flex: 0 0 calc(100vw - 28px);
-
-        width: calc(100vw - 28px);
+        flex-basis: calc(100vw - 24px);
+        width: calc(100vw - 24px);
     }
 
 
-    /* FOOTER */
+    /* ---------- COUNTERS ---------- */
+
+    .counter-section {
+        grid-template-columns: 1fr;
+        padding: 15px 10px;
+    }
+
+    .counter-box {
+        padding: 20px 5px;
+    }
+
+    .counter-box h2 {
+        font-size: 25px;
+    }
+
+    .counter-box p {
+        font-size: 11px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
 
     .footer-container {
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 24px 12px;
-
-        padding: 35px 14px 30px;
+        gap: 18px;
+        padding: 30px 12px;
     }
 
-    .footer-column h3,
-    .footer-column h4 {
-
-        font-size: 13px;
+    .footer-column h3 {
+        font-size: 12px;
     }
 
-    .footer-column p,
     .footer-column a,
-    .footer-column li {
-
-        font-size: 11.5px;
-
-        line-height: 1.6;
+    .contact-item,
+    .address {
+        font-size: 9px;
     }
-
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   VERY SMALL MOBILE - 360px AND BELOW
 ========================================================= */
 
 @media (max-width: 360px) {
 
-    /* PROJECTS */
-
-    .projects-grid,
-    .recent-projects-grid,
-    .project-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 15px;
+    .hero {
+        height: 245px;
     }
 
 
-    /* FEATURES */
+    /* ---------- ABOUT ---------- */
+
+    .about-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: 110px;
+    }
+
+
+    /* ---------- SERVICES ---------- */
+
+    .services-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 230px;
+    }
+
+
+    /* ---------- SOFTWARE ---------- */
+
+    .trade-image {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .trade-image img {
+        max-width: 125px;
+    }
+
+
+    /* ---------- FEATURES ---------- */
 
     .features {
-
         grid-template-columns: 1fr;
+    }
 
-        gap: 14px;
+    .feature {
+        justify-content: flex-start;
     }
 
 
-    /* FOOTER */
+    /* ---------- COUNTERS ---------- */
+
+    .counter-section {
+        grid-template-columns: 1fr;
+    }
+
+    .counter-box h2 {
+        font-size: 24px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
 
     .footer-container {
-
         grid-template-columns: 1fr 1fr;
-
-        gap: 22px 10px;
-
-        padding-left: 12px;
-        padding-right: 12px;
     }
-
 }
