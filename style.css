@@ -1701,10 +1701,16 @@ header.scrolled .nav-links a {
    ========================================================= */
 
 
+```css
+/* =========================================================
+   FINAL RESPONSIVE MEDIA QUERIES
+========================================================= */
+
+
 /* =========================================================
    TABLET
    768px - 1024px
-   ========================================================= */
+========================================================= */
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -1847,12 +1853,16 @@ header.scrolled .nav-links a {
     .features {
         max-width: 900px;
         padding: 10px 25px 55px;
+
         grid-template-columns: repeat(2, 1fr);
+
         column-gap: 35px;
         row-gap: 35px;
     }
 
     .feature {
+        display: flex;
+        align-items: flex-start;
         gap: 15px;
     }
 
@@ -1906,18 +1916,18 @@ header.scrolled .nav-links a {
 
     .counter-section {
         width: 100%;
+
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+
         gap: 20px;
         padding: 50px 25px;
+
+        text-align: center;
     }
 
     .counter-box {
         width: 100%;
-    }
-
-    .counter-box h2 {
-        font-size: 32px;
     }
 
 
@@ -1927,23 +1937,20 @@ header.scrolled .nav-links a {
 
     .footer-container {
         padding: 45px 30px 50px;
+
         grid-template-columns: 1fr 1fr;
+
         gap: 45px;
     }
-
 }
 
 
 /* =========================================================
    MOBILE
    767px AND BELOW
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 767px) {
-
-    /* =========================
-       BODY
-    ========================= */
 
     body {
         width: 100%;
@@ -1955,17 +1962,17 @@ header.scrolled .nav-links a {
        TOP BAR
     ========================= */
 
-    .topbar {
-        width: 100%;
-    }
-
     .top-content {
         padding: 8px 12px;
+
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 14px;
+
+        gap: 10px 14px;
+
         flex-wrap: wrap;
+
         font-size: 10px;
     }
 
@@ -1974,29 +1981,57 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    header {
-        width: 100%;
-    }
+    /* =====================================================
+       MOBILE NAVBAR
+    ===================================================== */
 
     .navbar {
         width: 100%;
-        height: 68px;
+        height: 72px;
+
         padding: 0 14px;
-        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
+
+    /* LOGO - INITIAL SIZE */
+
     .img {
-        width: 135px;
-        height: 60px;
+        width: 155px;
+        height: 68px;
+
+        display: flex;
+        align-items: center;
+
+        overflow: hidden;
+        flex-shrink: 0;
     }
 
     .img img {
-        width: 115px;
-        max-height: 52px;
+        width: 132px;
+        max-height: 60px;
+
+        object-fit: contain;
+    }
+
+
+    /* LOGO - AFTER SCROLL */
+
+    header.scrolled .navbar {
+        height: 58px;
+    }
+
+    header.scrolled .img {
+        width: 125px;
+        height: 54px;
+    }
+
+    header.scrolled .img img {
+        width: 105px;
+        max-height: 48px;
     }
 
 
@@ -2004,19 +2039,29 @@ header.scrolled .nav-links a {
 
     .menu {
         display: flex;
-        width: 40px;
-        height: 40px;
-        font-size: 21px;
+
+        width: 42px;
+        height: 42px;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        font-size: 22px;
+
         z-index: 1101;
     }
 
 
-    /* MOBILE NAV MENU */
+    /* MOBILE MENU */
 
     .nav-links {
         position: absolute;
-        top: 68px;
+
+        top: 72px;
         left: 0;
+
         width: 100%;
 
         display: flex;
@@ -2025,14 +2070,14 @@ header.scrolled .nav-links a {
 
         gap: 0;
 
-        background: rgba(255, 255, 255, 0.98);
-
-        box-shadow:
-            0 10px 25px rgba(11, 31, 51, 0.12);
+        background: rgba(255, 255, 255, 0.99);
 
         border-top: 1px solid #edf0f3;
 
+        box-shadow: 0 10px 25px rgba(11, 31, 51, .12);
+
         max-height: 0;
+
         overflow: hidden;
 
         opacity: 0;
@@ -2050,10 +2095,17 @@ header.scrolled .nav-links a {
         visibility: visible;
     }
 
+    header.scrolled .nav-links {
+        top: 58px;
+    }
+
     .nav-links a {
         width: 100%;
+
         padding: 13px 20px;
+
         font-size: 13px;
+
         border-bottom: 1px solid #edf0f3;
     }
 
@@ -2068,19 +2120,22 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
+    /* =====================================================
        HERO
-    ========================= */
+    ===================================================== */
 
     .hero {
         width: 100%;
+
         height: auto;
+
         aspect-ratio: 16 / 9;
 
         min-height: 0;
         max-height: none;
 
         position: relative;
+
         overflow: hidden;
 
         background: #0b1f33;
@@ -2088,6 +2143,7 @@ header.scrolled .nav-links a {
 
     .slide {
         position: absolute;
+
         inset: 0;
 
         width: 100%;
@@ -2108,9 +2164,8 @@ header.scrolled .nav-links a {
         display: block;
 
         /*
-           IMPORTANT:
-           contain keeps the complete image visible,
-           including text embedded inside banner.jpg
+           Complete image visible.
+           Embedded text will not be cropped.
         */
         object-fit: contain;
         object-position: center center;
@@ -2119,7 +2174,7 @@ header.scrolled .nav-links a {
     }
 
     .slide::after {
-        background: rgba(7, 25, 42, 0.04);
+        background: rgba(7, 25, 42, .04);
     }
 
 
@@ -2160,19 +2215,23 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
-       ABOUT
-    ========================= */
+    /* =====================================================
+       ABOUT US
+    ===================================================== */
 
     .about {
         width: 100%;
-        padding: 30px 16px 50px;
+
+        padding: 28px 16px 48px;
     }
 
     .about-box {
         width: 100%;
+
         grid-template-columns: 1fr;
-        gap: 22px;
+
+        gap: 20px;
+
         text-align: center;
     }
 
@@ -2182,26 +2241,37 @@ header.scrolled .nav-links a {
     }
 
     .about-image img {
-        width: 180px;
+        width: 170px;
         max-width: 70%;
+    }
+
+    /* About heading if present */
+
+    .about h2,
+    .about h3 {
+        font-size: 22px;
+        line-height: 1.3;
+
+        margin-bottom: 12px;
     }
 
     .about-content p,
     .about-text p {
-        font-size: 13.5px;
-        line-height: 1.75;
+        font-size: 13px;
+        line-height: 1.7;
+
         text-align: left;
     }
 
     .about-text {
         width: 100%;
-        margin: 28px auto 0;
+        margin: 25px auto 0;
     }
 
 
-    /* =========================
+    /* =====================================================
        QUOTE OFFER
-    ========================= */
+    ===================================================== */
 
     .quote-offer {
         min-height: 220px;
@@ -2213,25 +2283,28 @@ header.scrolled .nav-links a {
     }
 
     .quote-overlay h2 {
-        font-size: 24px;
+        font-size: 23px;
         line-height: 1.35;
     }
 
     .quote-btn {
-        margin-top: 15px;
+        margin-top: 14px;
     }
 
 
-    /* =========================
+    /* =====================================================
        SERVICES
-    ========================= */
+    ===================================================== */
 
     .services-cards {
         width: 100%;
+
         margin: 25px auto 20px;
+
         padding: 0 14px;
 
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
 
@@ -2245,7 +2318,7 @@ header.scrolled .nav-links a {
     }
 
     .card-content {
-        padding: 18px 18px 20px;
+        padding: 18px;
         min-height: auto;
     }
 
@@ -2260,26 +2333,41 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
+    /* =====================================================
+       OUR SERVICES / SECTION HEADINGS
+    ===================================================== */
+
+    .services h1,
+    .services h2,
+    .services h3,
+    .services-cards h1,
+    .services-cards h2,
+    .services-cards h3 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+
+    /* =====================================================
        SOFTWARE WE USE
-    ========================= */
+    ===================================================== */
 
     .trades {
         width: 100%;
+
         margin-top: 0;
+
         padding: 38px 10px 42px;
 
         overflow: hidden;
     }
 
     .trades h3 {
-        font-size: 23px;
-        margin-bottom: 25px;
-    }
+        font-size: 22px;
+        line-height: 1.3;
 
-    /*
-       Keep all 3 images in ONE ROW
-    */
+        margin-bottom: 24px;
+    }
 
     .trade-image {
         width: 100%;
@@ -2298,6 +2386,7 @@ header.scrolled .nav-links a {
 
     .trade-image img {
         width: calc((100% - 12px) / 3);
+
         flex: 0 0 calc((100% - 12px) / 3);
 
         max-width: none;
@@ -2308,33 +2397,41 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
-       FEATURES / WHY CHOOSE US
-    ========================= */
+    /* =====================================================
+       WHY CHOOSE US
+    ===================================================== */
 
     .features {
         width: 100%;
         max-width: 100%;
 
-        padding: 10px 15px 45px;
+        padding: 8px 15px 45px;
 
         display: grid;
+
         grid-template-columns: 1fr;
 
         column-gap: 0;
-        row-gap: 20px;
+        row-gap: 17px;
     }
+
+
+    /* FEATURE BOX */
 
     .feature {
         width: 100%;
 
         display: flex;
-        align-items: center;
 
-        gap: 14px;
+        align-items: flex-start;
 
-        padding: 14px 10px;
+        gap: 13px;
+
+        padding: 12px 8px;
     }
+
+
+    /* ICON */
 
     .feature i {
         flex: 0 0 42px;
@@ -2346,28 +2443,50 @@ header.scrolled .nav-links a {
         align-items: center;
         justify-content: center;
 
-        font-size: 20px;
+        font-size: 19px;
+
+        margin-top: 1px;
     }
+
+
+    /* TEXT AREA */
+
+    .feature > div {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+
+    /* FEATURE HEADING */
 
     .feature h2 {
-        font-size: 17px;
+        font-size: 16px;
+
         line-height: 1.25;
-        margin-bottom: 5px;
+
+        margin: 0 0 5px;
     }
 
+
+    /* FEATURE DESCRIPTION */
+
     .feature p {
-        font-size: 12px;
+        font-size: 11.5px;
+
         line-height: 1.55;
+
         margin: 0;
     }
 
 
-    /* =========================
+    /* =====================================================
        GOOGLE REVIEWS
-    ========================= */
+    ===================================================== */
 
     .google-reviews {
         width: 100%;
+
         padding: 38px 0 42px;
 
         overflow: hidden;
@@ -2375,48 +2494,45 @@ header.scrolled .nav-links a {
 
     .reviews-heading {
         width: 100%;
+
         padding: 0 15px;
+
         text-align: center;
     }
 
     .reviews-heading h2 {
         font-size: 21px;
+
         line-height: 1.35;
     }
 
     .review-line {
-        margin: 12px auto 25px;
+        margin: 11px auto 24px;
     }
-
-
-    /* REVIEW AREA */
 
     .reviews-container {
         width: 100%;
 
         display: flex;
+
         flex-direction: column;
 
-        gap: 22px;
+        gap: 20px;
     }
-
-
-    /* GOOGLE SCORE */
 
     .google-score {
         width: 100%;
+
         min-width: 0;
 
         text-align: center;
+
         padding: 0 15px;
     }
 
     .google-score h3 {
-        font-size: 19px;
+        font-size: 18px;
     }
-
-
-    /* REVIEW SLIDER */
 
     .reviews-slider {
         width: 100%;
@@ -2441,15 +2557,21 @@ header.scrolled .nav-links a {
         width: max-content;
 
         display: flex;
+
         flex-wrap: nowrap;
 
         gap: 14px;
 
+        /*
+           JS auto movement should not fight
+           with mobile touch scrolling.
+        */
         transform: none !important;
     }
 
     .review-card {
         width: 280px;
+
         min-width: 280px;
         max-width: 280px;
 
@@ -2457,20 +2579,23 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
+    /* =====================================================
        RECENT PROJECTS
-    ========================= */
+    ===================================================== */
 
     .recent-project-heading {
         width: 100%;
+
         padding: 0 15px;
 
         text-align: center;
     }
 
     .recent-project-heading h2 {
-        font-size: 22px;
+        font-size: 21px;
+
         line-height: 1.3;
+
         white-space: nowrap;
     }
 
@@ -2479,9 +2604,9 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
+    /* =====================================================
        COUNTERS
-    ========================= */
+    ===================================================== */
 
     .counter-section {
         width: 100%;
@@ -2489,14 +2614,13 @@ header.scrolled .nav-links a {
         display: grid;
 
         /*
-           MOBILE:
            ONE COUNTER PER ROW
         */
         grid-template-columns: 1fr;
 
         gap: 0;
 
-        padding: 20px 15px;
+        padding: 18px 15px;
 
         text-align: center;
     }
@@ -2504,7 +2628,7 @@ header.scrolled .nav-links a {
     .counter-box {
         width: 100%;
 
-        padding: 22px 10px;
+        padding: 21px 10px;
 
         border-bottom: 1px solid rgba(255,255,255,.12);
     }
@@ -2519,6 +2643,7 @@ header.scrolled .nav-links a {
 
     .counter-box h2 {
         font-size: 30px;
+
         margin: 7px 0 3px;
     }
 
@@ -2527,54 +2652,56 @@ header.scrolled .nav-links a {
     }
 
 
-    /* =========================
+    /* =====================================================
        FOOTER
-    ========================= */
-
-@media (max-width: 767px) {
+    ===================================================== */
 
     .site-footer {
         width: 100%;
+
         border-top: 3px solid #d9ad55;
     }
 
     .footer-container {
         width: 100%;
+
         max-width: 1500px;
 
         padding: 38px 25px 42px;
 
         display: grid;
+
         grid-template-columns: 1fr 1fr;
 
         gap: 35px;
+
         align-items: start;
     }
 
     .footer-column {
         width: 100%;
+
         display: flex;
         flex-direction: column;
+
         align-items: flex-start;
     }
 
-    /* HEADINGS */
-
     .footer-column h3 {
         font-size: 15px;
+
         line-height: 1.3;
+
         margin: 0 0 12px;
     }
 
-    /* LINKS */
-
     .footer-column a {
         font-size: 11.5px;
+
         line-height: 1.4;
+
         margin: 0 0 7px;
     }
-
-    /* SECONDARY HEADINGS */
 
     .contact-title,
     .office-title {
@@ -2582,17 +2709,17 @@ header.scrolled .nav-links a {
         margin-bottom: 11px !important;
     }
 
-    /* CONTACT */
-
     .contact-item {
         width: 100%;
 
         display: flex;
+
         align-items: center;
 
         gap: 7px;
 
         font-size: 10.5px;
+
         line-height: 1.4;
 
         margin: 0 0 7px;
@@ -2603,23 +2730,24 @@ header.scrolled .nav-links a {
         min-width: 17px;
 
         display: flex;
+
         align-items: center;
         justify-content: center;
 
         font-size: 12px;
     }
 
-    /* OFFICE */
-
     .address {
         width: 100%;
 
         display: flex;
+
         align-items: center;
 
         gap: 7px;
 
         font-size: 10.5px;
+
         line-height: 1.4;
 
         margin: 0 0 9px;
@@ -2627,7 +2755,9 @@ header.scrolled .nav-links a {
 
     .address img {
         width: 20px;
+
         min-width: 20px;
+
         height: 14px;
 
         object-fit: contain;
@@ -2637,73 +2767,85 @@ header.scrolled .nav-links a {
 }
 
 
-
 /* =========================================================
    SMALL MOBILE
    430px AND BELOW
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 430px) {
 
-    /* TOP BAR */
-
-    .top-content {
-        padding: 7px 8px;
-        gap: 8px 12px;
-        font-size: 9px;
-    }
-
-
-    /* NAVBAR */
+    /* =========================
+       NAVBAR
+    ========================= */
 
     .navbar {
-        height: 64px;
+        height: 68px;
         padding: 0 12px;
     }
 
     .img {
-        width: 125px;
-        height: 57px;
+        width: 145px;
+        height: 64px;
     }
 
     .img img {
-        width: 105px;
-        max-height: 49px;
+        width: 123px;
+        max-height: 56px;
+    }
+
+    header.scrolled .navbar {
+        height: 56px;
+    }
+
+    header.scrolled .img {
+        width: 115px;
+        height: 52px;
+    }
+
+    header.scrolled .img img {
+        width: 98px;
+        max-height: 45px;
     }
 
     .menu {
-        width: 38px;
-        height: 38px;
+        width: 39px;
+        height: 39px;
+
         font-size: 20px;
     }
 
     .nav-links {
-        top: 64px;
+        top: 68px;
+    }
+
+    header.scrolled .nav-links {
+        top: 56px;
     }
 
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
         width: 100%;
+
         height: auto;
+
         aspect-ratio: 16 / 9;
+
         min-height: 0;
     }
 
     .slide img {
-        width: 100%;
-        height: 100%;
-
         object-fit: contain;
         object-position: center center;
-
-        transform: none;
     }
 
     .arrow {
         width: 32px;
         height: 32px;
+
         font-size: 10px;
     }
 
@@ -2725,7 +2867,9 @@ header.scrolled .nav-links a {
     }
 
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about {
         padding: 25px 13px 42px;
@@ -2735,41 +2879,36 @@ header.scrolled .nav-links a {
         width: 155px;
     }
 
+    .about h2,
+    .about h3 {
+        font-size: 20px;
+    }
+
     .about-content p,
     .about-text p {
         font-size: 12.5px;
+
         line-height: 1.7;
     }
 
 
-    /* QUOTE */
+    /* =========================
+       SERVICES HEADINGS
+    ========================= */
 
-    .quote-overlay h2 {
-        font-size: 21px;
+    .services h1,
+    .services h2,
+    .services h3,
+    .services-cards h1,
+    .services-cards h2,
+    .services-cards h3 {
+        font-size: 20px;
     }
 
 
-    /* SERVICES */
-
-    .services-cards {
-        padding: 0 12px;
-        gap: 17px;
-    }
-
-    .card-image {
-        height: 240px;
-    }
-
-    .card-content {
-        padding: 16px;
-    }
-
-    .card-content p {
-        font-size: 12px;
-    }
-
-
-    /* SOFTWARE */
+    /* =========================
+       SOFTWARE
+    ========================= */
 
     .trades {
         padding: 32px 8px 38px;
@@ -2777,6 +2916,7 @@ header.scrolled .nav-links a {
 
     .trades h3 {
         font-size: 20px;
+
         margin-bottom: 20px;
     }
 
@@ -2786,40 +2926,56 @@ header.scrolled .nav-links a {
 
     .trade-image img {
         width: calc((100% - 8px) / 3);
+
         flex-basis: calc((100% - 8px) / 3);
+
         height: 65px;
     }
 
 
-    /* FEATURES */
+    /* =========================
+       WHY CHOOSE US
+    ========================= */
 
     .features {
         padding: 8px 12px 38px;
-        row-gap: 15px;
+
+        row-gap: 14px;
     }
 
     .feature {
         gap: 11px;
-        padding: 12px 8px;
+
+        padding: 11px 7px;
     }
 
     .feature i {
-        flex-basis: 38px;
+        flex: 0 0 38px;
+
         width: 38px;
         height: 38px;
-        font-size: 18px;
+
+        font-size: 17px;
+
+        margin-top: 1px;
     }
 
     .feature h2 {
         font-size: 15px;
+
+        margin-bottom: 4px;
     }
 
     .feature p {
         font-size: 11px;
+
+        line-height: 1.5;
     }
 
 
-    /* GOOGLE REVIEWS */
+    /* =========================
+       REVIEWS
+    ========================= */
 
     .reviews-heading h2 {
         font-size: 19px;
@@ -2827,19 +2983,26 @@ header.scrolled .nav-links a {
 
     .review-card {
         width: 265px;
+
         min-width: 265px;
         max-width: 265px;
+
+        flex-basis: 265px;
     }
 
 
-    /* RECENT PROJECTS */
+    /* =========================
+       RECENT PROJECTS
+    ========================= */
 
     .recent-project-heading h2 {
         font-size: 20px;
     }
 
 
-    /* COUNTERS */
+    /* =========================
+       COUNTERS
+    ========================= */
 
     .counter-section {
         padding: 15px 12px;
@@ -2858,37 +3021,72 @@ header.scrolled .nav-links a {
     }
 
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     .footer-container {
-        padding: 30px 12px 35px;
-        gap: 20px;
+        padding: 32px 18px 38px;
+
+        gap: 25px;
     }
 
     .footer-column h3 {
-        font-size: 13px;
+        font-size: 14px;
+
+        margin-bottom: 10px;
     }
 
     .footer-column a {
         font-size: 10.5px;
+
+        margin-bottom: 6px;
     }
 
-    .contact-item,
+    .contact-title,
+    .office-title {
+        margin-top: 17px !important;
+        margin-bottom: 9px !important;
+    }
+
+    .contact-item {
+        font-size: 9.5px;
+
+        gap: 6px;
+
+        margin-bottom: 6px;
+    }
+
+    .contact-item i {
+        width: 15px;
+        min-width: 15px;
+
+        font-size: 11px;
+    }
+
     .address {
         font-size: 9.5px;
+
+        gap: 6px;
+
+        margin-bottom: 7px;
     }
 
+    .address img {
+        width: 18px;
+        min-width: 18px;
+
+        height: 12px;
+    }
 }
 
 
 /* =========================================================
    VERY SMALL PHONES
    360px AND BELOW
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 360px) {
-
-    /* TOP BAR */
 
     .top-content {
         font-size: 8px;
@@ -2899,28 +3097,47 @@ header.scrolled .nav-links a {
     /* NAVBAR */
 
     .navbar {
-        height: 60px;
+        height: 62px;
         padding: 0 10px;
     }
 
     .img {
-        width: 115px;
-        height: 54px;
+        width: 135px;
+        height: 58px;
     }
 
     .img img {
-        width: 98px;
-        max-height: 46px;
+        width: 115px;
+        max-height: 52px;
+    }
+
+    header.scrolled .navbar {
+        height: 53px;
+    }
+
+    header.scrolled .img {
+        width: 108px;
+        height: 49px;
+    }
+
+    header.scrolled .img img {
+        width: 92px;
+        max-height: 44px;
     }
 
     .menu {
         width: 36px;
         height: 36px;
+
         font-size: 18px;
     }
 
     .nav-links {
-        top: 60px;
+        top: 62px;
+    }
+
+    header.scrolled .nav-links {
+        top: 53px;
     }
 
 
@@ -2949,22 +3166,26 @@ header.scrolled .nav-links a {
 
     .trade-image img {
         width: calc((100% - 6px) / 3);
+
         flex: 0 0 calc((100% - 6px) / 3);
+
         height: 55px;
     }
 
 
-    /* FEATURES */
+    /* WHY CHOOSE US */
 
     .feature {
         gap: 9px;
     }
 
     .feature i {
-        flex-basis: 34px;
+        flex: 0 0 34px;
+
         width: 34px;
         height: 34px;
-        font-size: 16px;
+
+        font-size: 15px;
     }
 
     .feature h2 {
@@ -2980,79 +3201,59 @@ header.scrolled .nav-links a {
 
     .review-card {
         width: 250px;
+
         min-width: 250px;
         max-width: 250px;
+
+        flex-basis: 250px;
     }
 
 
     /* FOOTER */
 
-    @media (max-width: 430px) {
-
     .footer-container {
-        padding: 32px 18px 38px;
-        gap: 25px;
+        gap: 14px;
+
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .footer-column h3 {
-        font-size: 14px;
-        margin-bottom: 10px;
+        font-size: 12px;
     }
 
     .footer-column a {
-        font-size: 10.5px;
-        margin-bottom: 6px;
-    }
-
-    .contact-title,
-    .office-title {
-        margin-top: 17px !important;
-        margin-bottom: 9px !important;
-    }
-
-    .contact-item {
         font-size: 9.5px;
-        gap: 6px;
-        margin-bottom: 6px;
     }
 
-    .contact-item i {
-        width: 15px;
-        min-width: 15px;
-        font-size: 11px;
-    }
-
+    .contact-item,
     .address {
-        font-size: 9.5px;
-        gap: 6px;
-        margin-bottom: 7px;
-    }
-
-    .address img {
-        width: 18px;
-        min-width: 18px;
-        height: 12px;
+        font-size: 8.5px;
     }
 }
 
 
 /* =========================================================
    MOBILE LANDSCAPE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 900px) and (orientation: landscape) {
 
     .hero {
         width: 100%;
+
         height: 75vh;
+
         min-height: 280px;
         max-height: 520px;
+
         aspect-ratio: auto;
     }
 
     .slide img {
         width: 100%;
         height: 100%;
+
         object-fit: contain;
         object-position: center center;
     }
@@ -3063,7 +3264,7 @@ header.scrolled .nav-links a {
 
     .nav-links.show {
         max-height: 400px;
+
         overflow-y: auto;
     }
-
 }
