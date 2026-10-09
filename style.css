@@ -1701,10 +1701,7 @@ header.scrolled .nav-links a {
    ========================================================= */
 
 
-```css
-/* =========================================================
-   FINAL RESPONSIVE MEDIA QUERIES
-========================================================= */
+
 
 
 /* =========================================================
@@ -3267,4 +3264,29 @@ header.scrolled .nav-links a {
 
         overflow-y: auto;
     }
+}
+
+
+
+/* =========================================================
+   MOBILE HERO - TOUCH ONLY
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .arrow,
+    .dots {
+        display: none !important;
+    }
+
+    .hero {
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .slide img {
+        pointer-events: none;
+    }
+
 }
