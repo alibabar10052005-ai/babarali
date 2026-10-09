@@ -190,7 +190,7 @@ if (slides.length > 1) {
 
         showSlide(currentSlide + 1);
 
-    }, 5000);
+    }, 4000);
 
 }
 
@@ -367,75 +367,331 @@ window.addEventListener("resize", function () {
 
 
 /* =========================================================
-   GOOGLE REVIEWS - MOBILE TOUCH SWIPE
+   TRADES SEARCH
 ========================================================= */
 
-if (reviewsTrack) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    reviewsTrack.addEventListener(
-        "touchstart",
-        function (event) {
-
-            touchStartX = event.touches[0].clientX;
-
-        },
-        { passive: true }
-    );
+    const searchForm = document.getElementById("tradeSearch");
+    const searchInput = document.getElementById("searchInput");
+    const searchMessage = document.getElementById("searchMessage");
 
 
-    reviewsTrack.addEventListener(
-        "touchend",
-        function (event) {
+    // Agar current page par search form nahi hai
+    // to code yahin stop ho jayega.
+    if (!searchForm || !searchInput) {
+        return;
+    }
 
-            touchEndX = event.changedTouches[0].clientX;
 
-            const difference = touchStartX - touchEndX;
+    /* =====================================================
+       SEARCH PAGES
+    ===================================================== */
 
-            if (Math.abs(difference) < 50) {
-                return;
+    const tradePages = {
+
+        /* Home */
+
+        "legacy":
+            "index.html",
+
+        "legacy estimating":
+            "index.html",
+
+        "home":
+            "index.html",
+
+
+        /* Electrical */
+
+        "electrical":
+            "trades/electrical-estimating.html",
+
+        "electrical estimating":
+            "trades/electrical-estimating.html",
+
+        "electrical takeoff":
+            "trades/electrical-takeoff.html",
+
+
+        /* Mechanical */
+
+        "mechanical":
+            "trades/mechanical-estimating.html",
+
+        "mechanical estimating":
+            "trades/mechanical-estimating.html",
+
+        "mechanical takeoff":
+            "trades/mechanical-takeoff.html",
+
+
+        /* Plumbing */
+
+        "plumbing":
+            "trades/plumbing-estimating.html",
+
+        "plumbing estimating":
+            "trades/plumbing-estimating.html",
+
+        "plumbing takeoff":
+            "trades/plumbing-takeoff.html",
+
+
+        /* Drywall */
+
+        "drywall":
+            "trades/drywall-estimating.html",
+
+        "drywall estimating":
+            "trades/drywall-estimating.html",
+
+        "drywall takeoff":
+            "trades/drywall-takeoff.html",
+
+
+        /* Masonry */
+
+        "masonry":
+            "trades/masonry-estimating.html",
+
+        "masonry estimating":
+            "trades/masonry-estimating.html",
+
+        "masonry takeoff":
+            "trades/masonry-takeoff.html",
+
+
+        /* Lumber */
+
+        "lumber":
+            "trades/lumber-estimating.html",
+
+        "lumber estimating":
+            "trades/lumber-estimating.html",
+
+        "lumber takeoff":
+            "trades/lumber-takeoff.html",
+
+
+        /* Metals */
+
+        "metals":
+            "trades/metals-estimating.html",
+
+        "metals estimating":
+            "trades/metals-estimating.html",
+
+        "metals takeoff":
+            "trades/metals-takeoff.html",
+
+
+        /* Concrete */
+
+        "concrete":
+            "trades/concrete-estimating.html",
+
+        "concrete estimating":
+            "trades/concrete-estimating.html",
+
+        "concrete takeoff":
+            "trades/concrete-takeoff.html",
+
+
+        /* Roofing */
+
+        "roofing":
+            "trades/roofing-estimating.html",
+
+        "roofing estimating":
+            "trades/roofing-estimating.html",
+
+        "roofing takeoff":
+            "trades/roofing-takeoff.html",
+
+
+        /* Site Work */
+
+        "site":
+            "trades/site-work-estimating.html",
+
+        "site work":
+            "trades/site-work-estimating.html",
+
+        "site work estimating":
+            "trades/site-work-estimating.html",
+
+        "site work takeoff":
+            "trades/site-work-takeoff.html",
+
+
+        /* Insulation */
+
+        "insulation":
+            "trades/insulation-estimating.html",
+
+        "insulation estimating":
+            "trades/insulation-estimating.html",
+
+        "insulation takeoff":
+            "trades/insulation-takeoff.html",
+
+
+        /* Interior */
+
+        "interior":
+            "trades/interior-estimating.html",
+
+        "interior estimating":
+            "trades/interior-estimating.html",
+
+        "interior takeoff":
+            "trades/interior-takeoff.html",
+
+
+        /* Flooring */
+
+        "flooring":
+            "trades/flooring-estimating.html",
+
+        "flooring estimating":
+            "trades/flooring-estimating.html",
+
+        "flooring takeoff":
+            "trades/flooring-takeoff.html"
+
+    };
+
+
+    /* =====================================================
+       SEARCH SUBMIT
+    ===================================================== */
+
+    searchForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const query = searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+        if (searchMessage) {
+            searchMessage.textContent = "";
+        }
+
+
+        /* Empty search */
+
+        if (query === "") {
+
+            if (searchMessage) {
+                searchMessage.textContent =
+                    "Please enter a search term.";
             }
 
-            const card = reviewsTrack.querySelector(".review-card");
+            return;
+        }
 
-            if (!card) {
-                return;
-            }
 
-            const cardWidth = card.offsetWidth + 14;
+        /* =================================================
+           EXACT MATCH
+        ================================================= */
 
-            if (difference > 0) {
-                reviewIndex++;
-            } else {
-                reviewIndex--;
-            }
+        if (tradePages[query]) {
 
-            if (reviewIndex < 0) {
-                reviewIndex = reviewCards.length - 1;
-            }
+            window.location.href =
+                tradePages[query];
 
-            if (reviewIndex >= reviewCards.length) {
-                reviewIndex = 0;
-            }
+            return;
+        }
 
-            reviewsTrack.style.transform =
-                `translateX(-${reviewIndex * cardWidth}px)`;
 
-        },
-        { passive: true }
-    );
+        /* =================================================
+           PARTIAL MATCH
+        ================================================= */
+
+        const result = Object.keys(tradePages).find(function (page) {
+
+            return page.includes(query);
+
+        });
+
+
+        if (result) {
+
+            window.location.href =
+                tradePages[result];
+
+            return;
+        }
+
+
+        /* =================================================
+           NO RESULT
+        ================================================= */
+
+        if (searchMessage) {
+
+            searchMessage.textContent =
+                "No matching page found.";
+
+        }
+
+    });
+
+});
+
+
+
+
+/* =========================================================
+   MOBILE TOUCH SWIPE
+========================================================= */
+
+const heroSlider = document.querySelector(".hero");
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (heroSlider) {
+
+    heroSlider.addEventListener("touchstart", function (e) {
+
+        touchStartX = e.touches[0].clientX;
+
+    }, { passive: true });
+
+
+    heroSlider.addEventListener("touchend", function (e) {
+
+        touchEndX = e.changedTouches[0].clientX;
+
+        const swipeDistance = touchEndX - touchStartX;
+
+
+        /* =========================
+           SWIPE LEFT = NEXT
+        ========================= */
+
+        if (swipeDistance < -50) {
+
+            showSlide(currentSlide + 1);
+
+        }
+
+
+        /* =========================
+           SWIPE RIGHT = PREVIOUS
+        ========================= */
+
+        if (swipeDistance > 50) {
+
+            showSlide(currentSlide - 1);
+
+        }
+
+    }, { passive: true });
 
 }
-
-
-
-
-
-
-
-
-
-
-
