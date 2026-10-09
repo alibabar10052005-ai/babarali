@@ -695,3 +695,57 @@ if (heroSlider) {
     }, { passive: true });
 
 }
+
+
+
+
+
+
+
+
+/* =========================================
+   BASIC CONTENT PROTECTION
+========================================= */
+
+// Disable right-click
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
+// Disable dragging images
+document.addEventListener("dragstart", function (e) {
+    if (e.target.closest("img")) {
+        e.preventDefault();
+    }
+});
+
+// Disable image selection and dragging
+document.querySelectorAll("img").forEach(function (img) {
+    img.setAttribute("draggable", "false");
+});
+
+// Disable text selection where CSS class is applied
+document.querySelectorAll(".protected-content").forEach(function (el) {
+    el.style.userSelect = "none";
+    el.style.webkitUserSelect = "none";
+});
+
+
+
+
+
+
+
+
+
+document.addEventListener("keydown", function (e) {
+    const key = e.key.toLowerCase();
+
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        (key === "u" || key === "s" || key === "c")
+    ) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+}, true);
