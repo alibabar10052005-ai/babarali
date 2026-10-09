@@ -1,6 +1,6 @@
 
 /* =========================================================
-   LEACY ESTIMATING
+   LEGACY ESTIMATING
    MODERN DEEP NAVY + GOLD
 ========================================================= */
 
@@ -42,6 +42,24 @@ button {
     font-size: 13px;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #d9ad55;
+}
+
+.email-link i {
+    font-size: 16px;
 }
 
 .top-content {
@@ -1932,35 +1950,16 @@ header.scrolled .nav-links a {
        FOOTER
     ========================= */
 
-   .footer-container {
-        max-width: 100%;
-        padding: 50px 30px 55px;
+    .footer-container {
+        padding: 45px 30px 50px;
+
         grid-template-columns: 1fr 1fr;
-        gap: 55px;
-    }
 
-    .footer-column {
-        width: 100%;
-    }
-
-    .footer-column h3 {
-        font-size: 17px;
-        margin-bottom: 25px;
-    }
-
-    .footer-column a {
-        font-size: 13px;
-        margin-bottom: 15px;
-    }
-
-    .contact-item {
-        font-size: 13px;
-    }
-
-    .address {
-        font-size: 12px;
+        gap: 45px;
     }
 }
+
+
 /* =========================================================
    MOBILE
    767px AND BELOW
@@ -2672,77 +2671,113 @@ header.scrolled .nav-links a {
        FOOTER
     ===================================================== */
 
- .site-footer {
+    .site-footer {
         width: 100%;
-        border-top-width: 3px;
+
+        border-top: 3px solid #d9ad55;
     }
 
     .footer-container {
         width: 100%;
-        max-width: 550px;
-        margin: auto;
 
-        padding: 45px 25px 50px;
+        max-width: 1500px;
+
+        padding: 38px 25px 42px;
 
         display: grid;
-        grid-template-columns: 1fr;
 
-        gap: 45px;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+
+        align-items: start;
     }
 
     .footer-column {
         width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
         align-items: flex-start;
     }
 
     .footer-column h3 {
-        font-size: 17px;
-        margin-bottom: 25px;
-        padding-bottom: 9px;
+        font-size: 15px;
+
+        line-height: 1.3;
+
+        margin: 0 0 12px;
     }
 
     .footer-column a {
-        font-size: 13px;
-        margin-bottom: 15px;
+        font-size: 11.5px;
+
+        line-height: 1.4;
+
+        margin: 0 0 7px;
     }
 
-    .contact-title {
-        margin-top: 25px !important;
-        margin-bottom: 25px !important;
+    .contact-title,
+    .office-title {
+        margin-top: 20px !important;
+        margin-bottom: 11px !important;
     }
 
     .contact-item {
-        font-size: 13px;
-        line-height: 1.6;
-        margin-bottom: 15px;
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        font-size: 10.5px;
+
+        line-height: 1.4;
+
+        margin: 0 0 7px;
     }
 
     .contact-item i {
-        width: 23px;
-        margin-right: 4px;
-    }
+        width: 17px;
+        min-width: 17px;
 
-    .office-title {
-        margin-top: 25px !important;
-        margin-bottom: 25px !important;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 12px;
     }
 
     .address {
         width: 100%;
-        gap: 10px;
-        font-size: 12px;
-        line-height: 1.6;
-        margin-bottom: 16px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        font-size: 10.5px;
+
+        line-height: 1.4;
+
+        margin: 0 0 9px;
     }
 
     .address img {
-        width: 30px;
-        height: 20px;
-        flex-shrink: 0;
-    }
+        width: 20px;
 
-    .address span {
-        max-width: calc(100% - 40px);
+        min-width: 20px;
+
+        height: 14px;
+
+        object-fit: contain;
+
+        margin: 0;
     }
 }
 
@@ -3191,33 +3226,24 @@ header.scrolled .nav-links a {
 
     /* FOOTER */
 
-      .footer-container {
-        padding: 35px 15px 40px;
-        gap: 35px;
+    .footer-container {
+        gap: 14px;
+
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .footer-column h3 {
-        font-size: 15px;
-        margin-bottom: 20px;
+        font-size: 12px;
     }
 
     .footer-column a {
-        font-size: 12px;
-        margin-bottom: 13px;
+        font-size: 9.5px;
     }
 
-    .contact-item {
-        font-size: 12px;
-    }
-
+    .contact-item,
     .address {
-        font-size: 11px;
-        line-height: 1.5;
-    }
-
-    .address img {
-        width: 27px;
-        height: 18px;
+        font-size: 8.5px;
     }
 }
 
@@ -3258,27 +3284,6 @@ header.scrolled .nav-links a {
     }
 }
 
-@media (max-width: 900px) and (orientation: landscape) {
-
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px;
-        padding: 40px 30px 45px;
-    }
-
-    .footer-column h3 {
-        font-size: 16px;
-    }
-
-    .footer-column a,
-    .contact-item {
-        font-size: 12px;
-    }
-
-    .address {
-        font-size: 11px;
-    }
-}
 
 
 /* =========================================================
