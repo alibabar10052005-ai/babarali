@@ -687,10 +687,9 @@ header.scrolled .nav-links a {
 
 }
 
-
-/* =================================/* =========================================================
+/* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 
 .site-footer {
     background: #081827;
@@ -720,7 +719,7 @@ header.scrolled .nav-links a {
     display: flex;
 
     flex-direction: column;
-    
+
     align-items: flex-start;
 }
 
@@ -744,11 +743,9 @@ header.scrolled .nav-links a {
     position: absolute;
 
     left: 0;
-
     bottom: 0;
 
     width: 35px;
-
     height: 2px;
 
     background: #d9ad55;
@@ -756,7 +753,9 @@ header.scrolled .nav-links a {
 
 .footer-column a {
     color: #c7d1db;
-   text-decoration: none;
+
+    text-decoration: none;
+
     font-size: 14px;
 
     margin-bottom: 17px;
@@ -771,7 +770,7 @@ header.scrolled .nav-links a {
 }
 
 
-/* FOOTER CONTACT */
+/* CONTACT */
 
 .contact-title {
     margin-top: 30px !important;
@@ -829,6 +828,8 @@ header.scrolled .nav-links a {
 
     flex-shrink: 0;
 
+    display: block;
+
     border-radius: 2px;
 }
 
@@ -837,330 +838,373 @@ header.scrolled .nav-links a {
 }
 
 
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
 
-/* =================================================
-   WHATSAPP
-================================================= */
-
-.whatsapp {
-
-    position: fixed;
-
-    right: 22px;
-
-    bottom: 22px;
-
-    width: 55px;
-
-    height: 55px;
-
-    border-radius: 50%;
-
-    background: #25d366;
-
-    color: #ffffff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 29px;
-
-    z-index: 999;
-
-    box-shadow:
-        0 5px 18px
-        rgba(0, 0, 0, 0.25);
-
-    transition: 0.3s ease;
-
-}
-
-
-.whatsapp span {
-
-    position: absolute;
-
-    right: 65px;
-
-    background: var(--navy-dark);
-
-    color: #ffffff;
-
-    padding:
-        7px
-        12px;
-
-    font-size: 12px;
-
-    white-space: nowrap;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: 0.3s ease;
-
-}
-
-
-.whatsapp:hover {
-
-    transform: scale(1.08);
-
-}
-
-
-.whatsapp:hover span {
-
-    opacity: 1;
-
-    visibility: visible;
-
-}
-
-
-/* =================================================
-   TABLET
-================================================= */
-
-@media (max-width: 1000px) {
+@media screen and (min-width: 768px) and (max-width: 1000px) {
 
     .nav-links {
-
         gap: 18px;
-
     }
-
 
     .trades-container {
-
-        grid-template-columns: 1fr;
-
+        grid-template-columns: minmax(0, 1fr);
     }
-
 
     .sidebar {
-
         border-left: none;
-
-        border-top:
-            1px solid #dddddd;
-
-        padding:
-            45px
-            0
-            0;
-
+        border-top: 1px solid #dddddd;
+        padding: 45px 0 0;
     }
-
 
     .recent-posts,
     .sidebar-contact {
-
         max-width: 700px;
-
         margin-left: auto;
-
         margin-right: auto;
-
     }
 
+    /* FOOTER FULL WIDTH */
+
+    .site-footer {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
 
     .footer-container {
-
-        grid-template-columns:
-            1fr
-            1fr;
-
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 50px 30px 55px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px;
+        box-sizing: border-box;
     }
 
+    .footer-column {
+        width: 100%;
+        min-width: 0;
+    }
 }
 
 
-/* =================================================
-   MOBILE
-================================================= */
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
 
-@media (max-width: 750px) {
+@media screen and (max-width: 767px) {
 
+    /* NAVIGATION */
 
     .nav-container {
-
         min-height: 70px;
-
     }
-
 
     .logo img {
-
         width: 120px;
-
+        max-width: 100%;
     }
-
 
     .menu-btn {
-
         display: block;
-
     }
-
 
     .nav-links {
-
         display: none;
-
         position: absolute;
-
         top: 70px;
-
         left: 0;
-
         width: 100%;
-
         background: var(--navy-dark);
-
         flex-direction: column;
-
         align-items: flex-start;
-
         padding: 25px;
-
+        box-sizing: border-box;
+        z-index: 999;
     }
-
 
     .nav-links.show {
-
         display: flex;
-
     }
-
 
     .nav-links a {
-
         width: 100%;
-
         padding: 10px 0;
-
     }
 
-
-    /* Hero */
+    /* HERO */
 
     .trades-hero {
-
         height: 300px;
-
         background-position: center;
-
+        background-size: cover;
     }
-
-
-    /* Search */
 
     .hero-search {
-
         top: 15px;
-
         left: 5%;
-
         right: 5%;
-
         width: 90%;
-
+        box-sizing: border-box;
     }
-
 
     .hero-content h1 {
-
         font-size: 38px;
-
     }
 
-
-    /* Content */
+    /* CONTENT */
 
     .trades-page {
-
         padding: 40px 0;
-
     }
 
+    .trades-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
 
     .trade-section {
-
-        padding:
-            15px
-            10px
-            50px;
-
+        padding: 15px 10px 50px;
     }
-
 
     .trade-section.alternate {
-
-        margin-left: -10px;
-
-        margin-right: -10px;
-
+        margin-left: 0;
+        margin-right: 0;
         padding-left: 20px;
-
         padding-right: 20px;
-
     }
-
 
     .trade-grid {
-
-        grid-template-columns: 1fr;
-
+        grid-template-columns: minmax(0, 1fr);
         gap: 45px;
-
     }
-
 
     .trade-section h2 {
-
         font-size: 28px;
-
     }
-
 
     .trade-card img {
-
-        width: 160px;
-
-        height: 110px;
-
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
-
 
     .trade-card h3 {
-
         font-size: 23px;
-
     }
 
+    /* FOOTER FULL WIDTH */
 
-    /* Footer */
+    .site-footer {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
     .footer-container {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 45px 25px 50px;
+        gap: 45px;
+        box-sizing: border-box;
     }
 
+    .footer-column {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .footer-column h3 {
+        font-size: 17px;
+        margin-bottom: 25px;
+        padding-bottom: 9px;
+    }
+
+    .footer-column a {
+        font-size: 13px;
+        margin-bottom: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-title {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .contact-item {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-item i {
+        width: 23px;
+        margin-right: 4px;
+        flex-shrink: 0;
+    }
+
+    .office-title {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .address {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    .address img {
+        width: 30px;
+        height: 20px;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+
+    .address span {
+        max-width: calc(100% - 40px);
+        overflow-wrap: anywhere;
+    }
+
+    /* WHATSAPP */
 
     .whatsapp {
-
         right: 15px;
-
         bottom: 15px;
+    }
+}
 
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 430px) {
+
+    .footer-container {
+        width: 100%;
+        max-width: none;
+        padding: 40px 20px 45px;
+        gap: 40px;
     }
 
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 22px;
+    }
+
+    .footer-column a {
+        font-size: 12.5px;
+        margin-bottom: 14px;
+    }
+
+    .contact-title {
+        margin-top: 22px !important;
+        margin-bottom: 22px !important;
+    }
+
+    .contact-item {
+        font-size: 12.5px;
+        margin-bottom: 14px;
+    }
+
+    .office-title {
+        margin-top: 22px !important;
+        margin-bottom: 22px !important;
+    }
+
+    .address {
+        font-size: 11.5px;
+        gap: 9px;
+        margin-bottom: 14px;
+    }
+
+    .address img {
+        width: 29px;
+        height: 19px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 360px) {
+
+    .footer-container {
+        width: 100%;
+        max-width: none;
+        padding: 35px 15px 40px;
+        gap: 35px;
+    }
+
+    .footer-column h3 {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .footer-column a {
+        font-size: 12px;
+        margin-bottom: 13px;
+    }
+
+    .contact-item {
+        font-size: 12px;
+    }
+
+    .address {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .address img {
+        width: 27px;
+        height: 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE
+========================================================= */
+
+@media screen and (min-width: 500px)
+and (max-width: 900px)
+and (orientation: landscape) {
+
+    .footer-container {
+        width: 100%;
+        max-width: none;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+        padding: 40px 30px 45px;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+    }
+
+    .footer-column a,
+    .contact-item {
+        font-size: 12px;
+    }
+
+    .address {
+        font-size: 11px;
+    }
 }
