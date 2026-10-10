@@ -3663,3 +3663,153 @@ text-decoration: none;
     }
 
 }
+
+
+
+
+
+/* =========================================
+   GOOGLE REVIEWS - MOBILE TOUCH SWIPE
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* Reviews Wrapper */
+    .reviews-slider-wrapper {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /* Enable Native Horizontal Scrolling */
+    .reviews-slider-wrapper .reviews-slider {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        overscroll-behavior-x: contain;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+
+        box-sizing: border-box;
+    }
+
+    /* Hide Scrollbar */
+    .reviews-slider-wrapper .reviews-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Reviews Track */
+    .reviews-slider-wrapper .reviews-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        max-width: none;
+        gap: 14px;
+
+        /* Disable desktop slider movement on mobile */
+        transform: none !important;
+        transition: none !important;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Individual Review Cards */
+    .reviews-slider-wrapper .review-card {
+        flex: 0 0 250px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        box-sizing: border-box;
+    }
+
+    /* Hide Previous / Next Arrows */
+    .reviews-slider-wrapper .review-prev,
+    .reviews-slider-wrapper .review-next {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   GOOGLE REVIEWS - FIX MOBILE TOUCH SWIPE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .google-reviews {
+        overflow: hidden;
+    }
+
+    .reviews-container {
+        width: 100%;
+        min-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .reviews-slider-wrapper {
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .reviews-slider-wrapper .reviews-slider {
+        width: 100%;
+        overflow-x: scroll !important;
+        overflow-y: hidden !important;
+
+        touch-action: pan-x pan-y !important;
+        -webkit-overflow-scrolling: touch;
+
+        scroll-behavior: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+    }
+
+    .reviews-slider-wrapper .reviews-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .reviews-slider-wrapper .reviews-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        max-width: none;
+
+        transform: none !important;
+        transition: none !important;
+
+        gap: 14px;
+    }
+
+    .reviews-slider-wrapper .review-card {
+        flex: 0 0 265px;
+        width: 265px;
+        min-width: 265px;
+        max-width: 265px;
+    }
+
+    .reviews-slider-wrapper .review-arrow {
+        display: none !important;
+        pointer-events: none !important;
+    }
+}
