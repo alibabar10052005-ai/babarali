@@ -3813,3 +3813,95 @@ text-decoration: none;
         pointer-events: none !important;
     }
 }
+
+/* GET A QUOTE - SMALLER SIZE */
+
+.quote-offer {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.quote-overlay {
+    min-height: 200px;
+    padding: 20px 15px;
+}
+
+.quote-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.quote-content p {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.quote-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .quote-offer,
+    .quote-overlay {
+        min-height: 170px;
+    }
+
+    .quote-overlay {
+        padding: 18px 12px;
+    }
+
+    .quote-content h2 {
+        font-size: 24px;
+    }
+
+    .quote-content p {
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    .quote-btn {
+        padding: 9px 20px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* Blink only when section comes near */
+
+.quote-offer.quote-near .quote-content {
+    animation: quoteBlink 0.8s ease-in-out 3;
+}
+
+@keyframes quoteBlink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.02);
+    }
+}
+
+
+#quoteOffer .quote-content.quote-near {
+    animation: quoteBlink 0.8s ease-in-out 3;
+}
+
+@keyframes quoteBlink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.02);
+    }
+}
