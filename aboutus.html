@@ -22,6 +22,23 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- Floating WhatsApp Button -->
+<a
+    href="https://wa.me/17185507786"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+>
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">WhatsApp Us</span>
+</a>
+<!-- Trusted Website Label -->
+<div class="trusted-label">
+    <i class="fa-solid fa-shield-halved"></i>
+    <span>Trusted Site</span>
+    <i class="fa-solid fa-circle-check trusted-tick"></i>
+</div>
 
 <body>
 
@@ -68,7 +85,7 @@
 
         <div class="nav-links" id="navLinks">
 
-            <a href="index.html" >Home</a>
+            <a href="index.html" class="active">Home</a>
 
             <a href="trades.html">Trades</a>
 
@@ -78,7 +95,7 @@
 
             <a href="sample.html">Samples</a>
 
-            <a href="aboutus.html" class="active">About Us</a>
+            <a href="aboutus.html" >About Us</a>
 
             <a href="contact.html">Contact</a>
 
@@ -213,7 +230,7 @@
         </p>
 
 
-        <p>
+       <p>
             The engineering staff of <strong>Legacy Estimating</strong> works
             under the strict guidelines of the American Society of Professional
             Estimators (ASPE) & the American Association of Cost Engineers
@@ -223,7 +240,7 @@
             Xactimate, Fast PIPE, Fast DUCT, and Quest Estimating. For pricing
             quantities, we use local zip codes according to the project
             location. Moreover, we double-check these from online resources
-            like RS Means and National Cost <strong>building estimator.</strong>
+            like RS Means and National Cost <strong><a href="https://en.wikipedia.org/wiki/Building_estimator">building estimator.</a></strong>
         </p>
 
     </div>
@@ -231,6 +248,28 @@
 </section>
 
 
+
+<!-- GET A QUOTE - 30% OFF -->
+<section class="quote-offer" id="quoteOffer">
+
+    <div class="quote-overlay">
+        <div class="quote-content">
+
+            <h2>
+                Get a Quote With
+                <strong>30% OFF</strong>
+            </h2>
+
+            
+
+            <a href="contact.html" class="quote-btn">
+                Contact Us
+            </a>
+
+        </div>
+    </div>
+
+</section>
 
 <!-- =====================================================
      SERVICES HEADING
@@ -512,202 +551,192 @@
 
 <section class="google-reviews">
 
-
     <!-- REVIEW HEADING -->
-
     <div class="reviews-heading">
-
-        <h2>
-            Trusted by Contractors of the US Construction Industry
-        </h2>
-
+        <h2>Trusted by Contractors of the US Construction Industry</h2>
         <div class="review-line"></div>
-
     </div>
-
-
 
     <div class="reviews-container">
 
-
         <!-- GOOGLE SCORE -->
-
         <div class="google-score">
-
             <h3>EXCELLENT</h3>
 
-            <div class="stars">
-                ★★★★★
-            </div>
+            <div class="stars">★★★★★</div>
 
-            <p>
-                Based on <strong>63 reviews</strong>
-            </p>
+            <p>Based on <strong>63 reviews</strong></p>
 
             <div class="google-text">
-
                 <i><span class="google-blue">G</span></i>
                 <i><span class="google-red">o</span></i>
                 <i><span class="google-yellow">o</span></i>
                 <i><span class="google-blue">g</span></i>
                 <i><span class="google-green">l</span></i>
                 <i><span class="google-red">e</span></i>
-
             </div>
-
         </div>
 
+        <!-- REVIEW SLIDER WITH ARROWS -->
+        <div class="reviews-slider-wrapper">
 
+            <button class="review-arrow review-prev"
+                    type="button"
+                    aria-label="Previous reviews">
+                &#10094;
+            </button>
 
-        <!-- REVIEW SLIDER -->
+            <div class="reviews-slider">
+                <div class="reviews-track">
 
-        <div class="reviews-slider">
-
-            <div class="reviews-track">
-
-
-                <!-- REVIEW 1 -->
-
-                <div class="review-card">
-
-                    <div class="review-top">
-
-                        <div class="review-avatar">
-                            K
+                    <!-- REVIEW 1 -->
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-avatar">K</div>
+                            <div>
+                                <h4>Kyle Bobbit</h4>
+                                <span>3 years ago</span>
+                            </div>
+                            <b class="google-g">G</b>
                         </div>
 
-                        <div>
-                            <h4>Kyle Bobbit</h4>
-                            <span>3 years ago</span>
-                        </div>
+                        <div class="card-stars">★★★★★</div>
 
-                        <b class="google-g">G</b>
+                        <p class="review-text collapsed">
+                            We were fine working with them for more
+                            than two years. I am glad that things are
+                            working out well for both of us.
+                        </p>
 
                     </div>
 
-                    <div class="card-stars">
-                        ★★★★★
+                    <!-- REVIEW 2 -->
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-avatar avatar-two">C</div>
+                            <div>
+                                <h4>Chris Towing</h4>
+                                <span>3 years ago</span>
+                            </div>
+                            <b class="google-g">G</b>
+                        </div>
+
+                        <div class="card-stars">★★★★★</div>
+
+                        <p class="review-text collapsed">
+                            I am very gratified to have worked with them for all these years. They have assisted us on many important projects, and I would like to thank them for that. Thank you so much, guys.
+                        </p>
+
+                        <button class="read-more-btn" type="button">
+                            Read more
+                        </button>
                     </div>
 
-                    <p>
-                        We were fine working with them for more than two years.
-                        I am glad that things are working out well for both...
-                    </p>
+                    <!-- REVIEW 3 -->
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-avatar avatar-three">O</div>
+                            <div>
+                                <h4>On Time Movers</h4>
+                                <span>3 years ago</span>
+                            </div>
+                            <b class="google-g">G</b>
+                        </div>
 
-                    <a href="#">Read more</a>
+                        <div class="card-stars">★★★★★</div>
+
+                        <p class="review-text collapsed">
+                            Cheers for the estimate; I appreciate
+                            your effort and the time you took to
+                            assist us with our requirements.
+                        </p>
+
+                        
+                    </div>
+
+                    
+                    <!-- REVIEW 5 -->
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-avatar avatar-five">M</div>
+                            <div>
+                                <h4>Michael Ethan</h4>
+                                <span>3 years ago</span>
+                            </div>
+                            <b class="google-g">G</b>
+                        </div>
+
+                        <div class="card-stars">★★★★★</div>
+
+                        <p class="review-text collapsed">
+                            The estimating team was professional
+                            and provided detailed project estimates.
+                            Communication was smooth throughout.
+                        </p>
+
+                        <button class="read-more-btn" type="button">
+                            Read more
+                        </button>
+                    </div>
+
+                    <!-- REVIEW 6 -->
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-avatar avatar-six">V</div>
+                            <div>
+                                <h4>Venu Vera</h4>
+                                <span>3 years ago</span>
+                            </div>
+                            <b class="google-g">G</b>
+                        </div>
+
+                        <div class="card-stars">★★★★★</div>
+
+                        <p class="review-text collapsed">
+                            They provided me with accurate and expedited estimating services due to our urgent needs. We look forward to working with them on many projects to come.
+                        </p>
+
+                        <button class="read-more-btn" type="button">
+                            Read more
+                        </button>
+                    </div>
+
+                    <!-- REVIEW 7 -->
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-avatar avatar-seven">J</div>
+                            <div>
+                                <h4>James Wilson</h4>
+                                <span>2 years ago</span>
+                            </div>
+                            <b class="google-g">G</b>
+                        </div>
+
+                        <div class="card-stars">★★★★★</div>
+
+                        <p class="review-text collapsed">
+                            We received an organized estimate with
+                            detailed quantities for our project.
+                            The process was straightforward and clear.
+                        </p>
+
+                        <button class="read-more-btn" type="button">
+                            Read more
+                        </button>
+                    </div>
 
                 </div>
-
-
-
-                <!-- REVIEW 2 -->
-
-                <div class="review-card">
-
-                    <div class="review-top">
-
-                        <div class="review-avatar avatar-two">
-                            C
-                        </div>
-
-                        <div>
-                            <h4>Chris Towing</h4>
-                            <span>3 years ago</span>
-                        </div>
-
-                        <b class="google-g">G</b>
-
-                    </div>
-
-                    <div class="card-stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        I am very gratified to have worked with them for all
-                        these years. They have assisted us on many...
-                    </p>
-
-                    <a href="#">Read more</a>
-
-                </div>
-
-
-
-                <!-- REVIEW 3 -->
-
-                <div class="review-card">
-
-                    <div class="review-top">
-
-                        <div class="review-avatar avatar-three">
-                            O
-                        </div>
-
-                        <div>
-                            <h4>On Time Movers</h4>
-                            <span>3 years ago</span>
-                        </div>
-
-                        <b class="google-g">G</b>
-
-                    </div>
-
-                    <div class="card-stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        Cheers for the estimate; I appreciate your effort.
-                    </p>
-
-                    <a href="#">Read more</a>
-
-                </div>
-
-
-
-                <!-- REVIEW 4 -->
-
-                <div class="review-card">
-
-                    <div class="review-top">
-
-                        <div class="review-avatar avatar-four">
-                            J
-                        </div>
-
-                        <div>
-                            <h4>John Contractor</h4>
-                            <span>2 years ago</span>
-                        </div>
-
-                        <b class="google-g">G</b>
-
-                    </div>
-
-                    <div class="card-stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        Excellent estimating service and very professional
-                        team. Highly recommended.
-                    </p>
-
-                    <a href="#">Read more</a>
-
-                </div>
-
             </div>
 
-        </div>
+            <button class="review-arrow review-next"
+                    type="button"
+                    aria-label="Next reviews">
+                &#10095;
+            </button>
 
+        </div>
     </div>
-
 </section>
-
-
 
 <!-- =====================================================
      RECENT PROJECTS
@@ -847,7 +876,7 @@
             <p class="address">
 
                 <img src="uk.png" alt="New York">
-                        
+
                 <span>
                     190 West End Avenue, New York City, NY
                 </span>
@@ -880,7 +909,7 @@
             <p class="address">
 
                 <img src="india.svg" alt="Indiana">
-                     
+
                 <span>
                     3740 N High School Rd, Indianapolis, IN
                 </span>
