@@ -1197,7 +1197,7 @@ text-decoration: none;
 
 /* Desktop hover */
 
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
     .review-card:hover {
         transform: translateY(-5px);
         background: #ffffff;
@@ -1206,7 +1206,7 @@ text-decoration: none;
         box-shadow:
             0 12px 30px rgba(11, 31, 51, 0.10);
     }
-}
+} */
 
 /* =====================================================
    REVIEW HEADER
@@ -1445,7 +1445,7 @@ text-decoration: none;
 /* =====================================================
    LARGE LAPTOPS
 ===================================================== */
-
+/* 
 @media (max-width: 1200px) {
     .reviews-container {
         max-width: 100%;
@@ -1462,12 +1462,12 @@ text-decoration: none;
         width: 250px;
         min-width: 250px;
     }
-}
+} */
 
 /* =====================================================
    TABLETS
 ===================================================== */
-
+/* 
 @media (max-width: 900px) {
     .reviews-heading h2 {
         font-size: 29px;
@@ -1505,12 +1505,12 @@ text-decoration: none;
     .review-next {
         right: -10px;
     }
-}
+} */
 
 /* =====================================================
    MOBILE PHONES
 ===================================================== */
-
+/* 
 @media (max-width: 600px) {
     .reviews-heading {
         padding: 23px 15px 8px;
@@ -1623,12 +1623,12 @@ text-decoration: none;
     .review-next {
         right: -8px;
     }
-}
+} */
 
 /* =====================================================
    SMALL MOBILE PHONES
 ===================================================== */
-
+/* 
 @media (max-width: 360px) {
     .reviews-heading h2 {
         font-size: 21px;
@@ -1659,12 +1659,12 @@ text-decoration: none;
     .google-g {
         font-size: 20px;
     }
-}
+} */
 
 /* =====================================================
    REDUCED MOTION ACCESSIBILITY
 ===================================================== */
-
+/* 
 @media (prefers-reduced-motion: reduce) {
     .reviews-track,
     .review-card,
@@ -1673,7 +1673,7 @@ text-decoration: none;
         transition: none;
     }
 }
-
+ */
 
 /* =========================================================
    RECENT PROJECTS
