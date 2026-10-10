@@ -899,3 +899,122 @@ header.scrolled .nav-links a {
         font-size: 36px;
     }
 }
+
+
+/* =====================================
+   TRUSTED WEBSITE LABEL
+===================================== */
+
+.trusted-label {
+    position: fixed;
+    right: 25px;
+    bottom: 5px;
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 12px;
+    background: #0b1f33;
+    color: #ffffff;
+
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    animation: trustedAppear 0.4s ease 1s forwards;
+}
+
+/* Shield Icon */
+.trusted-label .fa-shield-halved {
+    color: #d9ad55;
+    font-size: 14px;
+}
+
+/* Verified Tick Icon */
+.trusted-label .trusted-tick {
+    color: #25D366;
+    font-size: 15px;
+}
+
+/* =====================================
+   SHOW AFTER 1 SECOND
+===================================== */
+
+@keyframes trustedAppear {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* =====================================
+   FLOATING WHATSAPP BUTTON
+===================================== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 65px;
+    z-index: 9999;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 767px) {
+
+    .trusted-label {
+        right: 14px;
+        bottom: 5px;
+
+        padding: 7px 10px;
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .trusted-label .fa-shield-halved {
+        font-size: 13px;
+    }
+
+    .trusted-label .trusted-tick {
+        font-size: 14px;
+    }
+
+    .whatsapp-float {
+        right: 14px;
+        bottom: 60px;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .trusted-label {
+        right: 10px;
+        bottom: 5px;
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .whatsapp-float {
+        right: 10px;
+        bottom: 55px;
+    }
+}
