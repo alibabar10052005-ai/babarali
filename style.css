@@ -2127,7 +2127,7 @@ text-decoration: none;
        HERO
     ========================= */
 
-    .hero {
+    /* .hero {
         width: 100%;
         height: 430px;
         position: relative;
@@ -2149,7 +2149,7 @@ text-decoration: none;
         object-position: center center;
         transform: none;
     }
-
+ */
 
     /* =========================
        ABOUT
@@ -2494,7 +2494,7 @@ text-decoration: none;
        HERO
     ===================================================== */
 
-    .hero {
+    /* .hero {
         width: 100%;
 
         height: auto;
@@ -2537,16 +2537,16 @@ text-decoration: none;
            Complete image visible.
            Embedded text will not be cropped.
         */
-        object-fit: contain;
+        /* object-fit: contain;
         object-position: center center;
 
         transform: none;
-    }
+    } */
 
-    .slide::after {
+    /* .slide::after {
         background: rgba(7, 25, 42, .04);
     }
-
+ */ */
 
     /* HERO ARROWS */
 
@@ -3197,7 +3197,7 @@ text-decoration: none;
        HERO
     ========================= */
 
-    .hero {
+    /* .hero {
         width: 100%;
 
         height: auto;
@@ -3234,7 +3234,7 @@ text-decoration: none;
     .dot {
         width: 6px;
         height: 6px;
-    }
+    } */
 
 
     /* =========================
@@ -3513,7 +3513,7 @@ text-decoration: none;
 
     /* HERO */
 
-    .hero {
+    /* .hero {
         aspect-ratio: 16 / 9;
         height: auto;
     }
@@ -3525,7 +3525,7 @@ text-decoration: none;
     .arrow {
         width: 29px;
         height: 29px;
-    }
+    } */
 
 
     /* SOFTWARE */
@@ -3905,9 +3905,6 @@ text-decoration: none;
         transform: scale(1.02);
     }
 }
-
-
-
 
 
 /* ==============================
@@ -4338,3 +4335,198 @@ text-decoration: none;
     }
 }
 
+/* ========================================
+   MOBILE HERO SLIDER
+   ALL MOBILE PHONES
+======================================== */
+
+@media (max-width: 767px) {
+
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 170px;
+        min-height: 0;
+        aspect-ratio: auto;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    .hero .slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .hero .slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: none;
+    }
+
+    .hero .slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE PHONES
+   320px - 374px
+======================================== */
+
+@media (max-width: 374px) {
+
+    .hero {
+        height: 145px;
+    }
+
+    .hero .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+/* ========================================
+   STANDARD MOBILE PHONES
+   375px - 480px
+======================================== */
+
+@media (min-width: 375px) and (max-width: 480px) {
+
+    .hero {
+        height: 160px;
+    }
+
+    .hero .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+/* ========================================
+   LARGE MOBILE PHONES
+   481px - 767px
+======================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .hero {
+        height: 190px;
+    }
+
+    .hero .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+/* ========================================
+   TABLETS
+   768px - 1024px
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        min-height: 0;
+        aspect-ratio: auto;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero .slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .hero .slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: none;
+    }
+}
+
+
+/* ========================================
+   LARGE TABLETS & SMALL LAPTOPS
+   1025px - 1200px
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+    .hero {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero .slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+/* ========================================
+   MOBILE & TABLET LANDSCAPE
+======================================== */
+
+@media (max-width: 1024px) and (orientation: landscape) {
+
+    .hero {
+        width: 100%;
+        height: 200px;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .hero .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
