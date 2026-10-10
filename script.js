@@ -303,49 +303,49 @@ const reviewCards =
 let reviewIndex = 0;
 
 
-function moveReviews() {
+// function moveReviews() {
 
-    if (!reviewsTrack || reviewCards.length <= 1) {
-        return;
-    }
-
-
-    const cardWidth =
-        reviewCards[0].offsetWidth + 18;
+//     if (!reviewsTrack || reviewCards.length <= 1) {
+//         return;
+//     }
 
 
-    reviewIndex++;
+//     const cardWidth =
+//         reviewCards[0].offsetWidth + 18;
 
 
-    /*
-       4 reviews available.
-       Reset when the last card is reached.
-    */
-
-    if (reviewIndex >= reviewCards.length) {
-
-        reviewIndex = 0;
-
-    }
+//     reviewIndex++;
 
 
-    reviewsTrack.style.transform =
-        `translateX(-${reviewIndex * cardWidth}px)`;
+//     /*
+//        4 reviews available.
+//        Reset when the last card is reached.
+//     */
 
-}
+//     if (reviewIndex >= reviewCards.length) {
+
+//         reviewIndex = 0;
+
+//     }
 
 
-/* AUTO REVIEWS */
+//     reviewsTrack.style.transform =
+//         `translateX(-${reviewIndex * cardWidth}px)`;
 
-if (reviewCards.length > 1) {
+// }
 
-    setInterval(function () {
 
-        moveReviews();
+// /* AUTO REVIEWS */
 
-    }, 4000);
+// if (reviewCards.length > 1) {
 
-}
+//     setInterval(function () {
+
+//         moveReviews();
+
+//     }, );
+
+// }
 
 
 /* =========================================================
@@ -749,3 +749,91 @@ document.addEventListener("keydown", function (e) {
         e.stopImmediatePropagation();
     }
 }, true);
+
+
+
+
+
+/* =====================================
+   GOOGLE REVIEWS SLIDER
+===================================== */
+
+document.querySelectorAll(".reviews-slider-wrapper").forEach((wrapper) => {
+    const slider = wrapper.querySelector(".reviews-slider");
+    const track = wrapper.querySelector(".reviews-track");
+    const prevBtn = wrapper.querySelector(".review-prev");
+    const nextBtn = wrapper.querySelector(".review-next");
+
+    if (!slider || !track || !prevBtn || !nextBtn) return;
+
+    let position = 0;
+
+    function getStep() {
+        const card = track.querySelector(".review-card");
+
+        if (!card) return 0;
+
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+
+        return card.getBoundingClientRect().width + gap;
+    }
+
+    function getMaxPosition() {
+        const maxScroll = track.scrollWidth - slider.clientWidth;
+        const step = getStep();
+
+        if (step <= 0 || maxScroll <= 0) return 0;
+
+        return Math.ceil(maxScroll / step);
+    }
+
+    function updateSlider() {
+        const maxPosition = getMaxPosition();
+
+        position = Math.max(0, Math.min(position, maxPosition));
+
+        const distance = Math.min(
+            position * getStep(),
+            Math.max(0, track.scrollWidth - slider.clientWidth)
+        );
+
+        track.style.transform = `translateX(-${distance}px)`;
+
+        prevBtn.disabled = position === 0;
+        nextBtn.disabled = position >= maxPosition;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        position++;
+        updateSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        position--;
+        updateSlider();
+    });
+
+    window.addEventListener("resize", updateSlider);
+
+    updateSlider();
+});
+
+
+/* =====================================
+   READ MORE / HIDE REVIEWS
+===================================== */
+
+document.addEventListener("click", (event) => {
+    const button = event.target.closest(".read-more-btn");
+
+    if (!button) return;
+
+    const card = button.closest(".review-card");
+    const text = card?.querySelector(".review-text");
+
+    if (!text) return;
+
+    const isCollapsed = text.classList.toggle("collapsed");
+
+    button.textContent = isCollapsed ? "Read more" : "Hide";
+});
