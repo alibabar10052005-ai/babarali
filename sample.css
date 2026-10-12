@@ -945,7 +945,7 @@ header.scrolled .nav-links a {
 }
 
 /* =====================================
-   SHOW AFTER 1 SECOND
+   SHOW BOTH AFTER 1 SECOND
 ===================================== */
 
 @keyframes trustedAppear {
@@ -969,6 +969,10 @@ header.scrolled .nav-links a {
     right: 25px;
     bottom: 65px;
     z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    animation: trustedAppear 0.4s ease 1s forwards;
 }
 
 /* =====================================
@@ -1009,6 +1013,7 @@ header.scrolled .nav-links a {
     .trusted-label {
         right: 10px;
         bottom: 5px;
+
         padding: 6px 8px;
         font-size: 10px;
     }
