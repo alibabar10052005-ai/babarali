@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentSlide = 0;
     let heroTimer = null;
 
-    const slideDelay = 5000;
+    const slideDelay = 3000;
 
     // Set initial active slide
     const initialIndex = Array.from(slides).findIndex(function (slide) {
