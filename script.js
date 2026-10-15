@@ -59,29 +59,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       3. HERO SLIDER - DESKTOP + MOBILE
-    ===================================================== */
 
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    const nextBtn = document.getElementById("next");
-    const prevBtn = document.getElementById("prev");
+/* =====================================================
+   3. HERO SLIDER
+   Desktop + Tablet + Mobile
+   Auto slide + Keyboard + Swipe
+===================================================== */
+
+(function () {
+    const hero = document.querySelector(".hero");
+
+    if (!hero) return;
+
+    const slides = hero.querySelectorAll(".slide");
+
+    if (slides.length === 0) return;
 
     let currentSlide = 0;
-    let heroTimer;
+    let heroTimer = null;
+
+    const slideDelay = 5000;
+
+    // Set initial active slide
+    const initialIndex = Array.from(slides).findIndex(function (slide) {
+        return slide.classList.contains("active");
+    });
+
+    currentSlide = initialIndex >= 0 ? initialIndex : 0;
 
     function showSlide(index) {
-        if (!slides.length) return;
-
         currentSlide = (index + slides.length) % slides.length;
 
         slides.forEach(function (slide, i) {
             slide.classList.toggle("active", i === currentSlide);
-        });
-
-        dots.forEach(function (dot, i) {
-            dot.classList.toggle("active", i === currentSlide);
         });
     }
 
@@ -91,58 +101,98 @@ document.addEventListener("DOMContentLoaded", function () {
         if (slides.length > 1) {
             heroTimer = setInterval(function () {
                 showSlide(currentSlide + 1);
-            }, 4000);
+            }, slideDelay);
         }
     }
 
-    if (nextBtn) {
-        nextBtn.addEventListener("click", function () {
+    // Show first slide and start autoplay
+    showSlide(currentSlide);
+    restartHeroTimer();
+
+    // KEYBOARD LEFT / RIGHT ARROWS
+    document.addEventListener("keydown", function (event) {
+        const tag = event.target.tagName;
+
+        if (
+            tag === "INPUT" ||
+            tag === "TEXTAREA" ||
+            tag === "SELECT" ||
+            event.target.isContentEditable ||
+            event.altKey ||
+            event.ctrlKey ||
+            event.metaKey
+        ) {
+            return;
+        }
+
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
             showSlide(currentSlide + 1);
             restartHeroTimer();
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", function () {
+        } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
             showSlide(currentSlide - 1);
             restartHeroTimer();
-        });
-    }
-
-    dots.forEach(function (dot, index) {
-        dot.addEventListener("click", function () {
-            showSlide(index);
-            restartHeroTimer();
-        });
+        }
     });
 
-    if (slides.length) {
-        const activeIndex = Array.from(slides).findIndex(function (slide) {
-            return slide.classList.contains("active");
-        });
+    // MOBILE SWIPE
+    let touchStartX = 0;
+    let touchStartY = 0;
 
-        showSlide(activeIndex >= 0 ? activeIndex : 0);
+    hero.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].clientX;
+        touchStartY = event.changedTouches[0].clientY;
+    }, { passive: true });
+
+    hero.addEventListener("touchend", function (event) {
+        const touchEndX = event.changedTouches[0].clientX;
+        const touchEndY = event.changedTouches[0].clientY;
+
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        // Ignore vertical scrolling
+        if (
+            Math.abs(diffX) < 50 ||
+            Math.abs(diffX) < Math.abs(diffY)
+        ) {
+            return;
+        }
+
+        if (diffX < 0) {
+            showSlide(currentSlide + 1);
+        } else {
+            showSlide(currentSlide - 1);
+        }
+
         restartHeroTimer();
-    }
+    }, { passive: true });
+
+})();
 
 
-    /* =====================================================
-       4. COUNTERS - MOBILE + DESKTOP
-       Start when the counter section is near the screen
-    ===================================================== */
+/* =====================================================
+   4. COUNTERS
+   Uses your existing counter HTML
+   Desktop + Tablet + Mobile
+===================================================== */
 
-    const counters = document.querySelectorAll(".counter");
+(function () {
     const counterSection = document.querySelector(".counter-section");
+    const counters = document.querySelectorAll(".counter");
+
+    if (!counterSection || counters.length === 0) return;
 
     let counterStarted = false;
 
     function startCounters() {
-        if (counterStarted || !counters.length) return;
+        if (counterStarted) return;
 
         counterStarted = true;
 
         counters.forEach(function (counter) {
-            const target = Number(counter.getAttribute("data-target"));
+            const target = Number(counter.dataset.target);
 
             if (!Number.isFinite(target) || target < 0) return;
 
@@ -150,7 +200,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const startTime = performance.now();
 
             function animateCounter(now) {
-                const progress = Math.min((now - startTime) / duration, 1);
+                const progress = Math.min(
+                    (now - startTime) / duration,
+                    1
+                );
+
                 const value = Math.floor(target * progress);
 
                 counter.textContent = value.toLocaleString() + "+";
@@ -158,7 +212,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (progress < 1) {
                     requestAnimationFrame(animateCounter);
                 } else {
-                    counter.textContent = target.toLocaleString() + "+";
+                    counter.textContent =
+                        target.toLocaleString() + "+";
                 }
             }
 
@@ -166,26 +221,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (counterSection) {
-        if ("IntersectionObserver" in window) {
-            const counterObserver = new IntersectionObserver(function (entries) {
+    // Start when counter section is near the viewport
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            function (entries) {
                 if (entries.some(function (entry) {
                     return entry.isIntersecting;
                 })) {
                     startCounters();
-                    counterObserver.disconnect();
+                    observer.disconnect();
                 }
-            }, {
-                rootMargin: "250px 0px",
+            },
+            {
+                root: null,
+                rootMargin: "0px 0px 250px 0px",
                 threshold: 0
-            });
+            }
+        );
 
-            counterObserver.observe(counterSection);
-        } else {
-            startCounters();
-        }
+        observer.observe(counterSection);
+    } else {
+        startCounters();
     }
-
+})();
 
     /* =====================================================
        5. TRADES SEARCH
@@ -556,3 +614,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+
