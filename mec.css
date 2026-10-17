@@ -1,0 +1,49 @@
+/* MECHANICAL ESTIMATING TEAM */
+
+.electrical-team-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.electrical-team-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+
+.electrical-team-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.electrical-team-description {
+    flex: 1;
+    min-width: 0;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 767px) {
+    .electrical-team-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .electrical-team-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .electrical-team-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .electrical-team-description {
+        width: 100%;
+    }
+}

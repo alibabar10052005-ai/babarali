@@ -1,0 +1,24 @@
+.drywall-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin: 20px 0 25px;
+}
+
+.drywall-list ol {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.drywall-list li {
+    padding: 5px 0;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 600px) {
+    .drywall-list {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

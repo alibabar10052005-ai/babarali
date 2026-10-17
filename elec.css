@@ -1,0 +1,1792 @@
+
+/* =========================================================
+   LEGACY ESTIMATING
+   MODERN DEEP NAVY + GOLD
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #536273;
+    background: #f7f9fc;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TOP CONTACT BAR
+========================================================= */
+
+.topbar {
+    background: #0b1f33;
+    color: #ffffff;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.top-content {
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 9px 35px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.top-content span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    opacity: 0.92;
+
+    transition: 0.3s ease;
+}
+
+.top-content span:hover {
+    color: #d9ad55;
+}
+
+.top-content i {
+    color: #d9ad55;
+}
+
+
+/* =========================================================
+   STICKY NAVBAR
+========================================================= */
+
+header {
+    background: rgba(255, 255, 255, 0.97);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 4px 20px rgba(11, 31, 51, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   LARGE NAVBAR - TOP
+========================================================= */
+
+.navbar {
+    max-width: 1450px;
+
+    height: 90px;
+
+    margin: auto;
+
+    padding: 0 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition:
+        height 0.35s ease,
+        padding 0.35s ease;
+}
+
+
+/* =========================================================
+   LOGO - LARGE
+========================================================= */
+
+.img {
+    width: 180px;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    transition:
+        width 0.35s ease,
+        height 0.35s ease;
+}
+
+.img img {
+    width: 145px;
+
+    height: auto;
+
+    max-height: 75px;
+
+    object-fit: contain;
+
+    transition:
+        width 0.35s ease,
+        max-height 0.35s ease;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #29445c;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        font-size 0.35s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #d9ad55;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0b1f33;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SHRINK NAVBAR AFTER SCROLL
+========================================================= */
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+
+    box-shadow:
+        0 5px 25px rgba(11, 31, 51, 0.15);
+}
+
+header.scrolled .navbar {
+    height: 62px;
+}
+
+header.scrolled .img {
+    width: 125px;
+
+    height: 58px;
+}
+
+header.scrolled .img img {
+    width: 105px;
+
+    max-height: 52px;
+}
+
+header.scrolled .nav-links a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu {
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #0b1f33;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+/* =================================================
+   LEGACY ESTIMATING
+   ELECTRICAL ESTIMATING PAGE
+================================================= */
+
+.electrical-hero,
+.electrical-hero *,
+.electrical-intro,
+.electrical-intro *,
+.electrical-team,
+.electrical-team * {
+    box-sizing: border-box;
+}
+
+
+/* =================================================
+   ELECTRICAL HERO
+================================================= */
+
+.electrical-hero {
+    width: 100%;
+    position: relative;
+    min-height: 320px;
+    overflow: hidden;
+    background: #0b2438;
+}
+
+.electrical-hero-image {
+    width: 100%;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.electrical-hero-image > img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.electrical-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(11, 31, 51, 0.45),
+        rgba(11, 31, 51, 0.65)
+    );
+}
+
+.electrical-hero-title {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 320px;
+    padding: 30px 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.electrical-hero-title h1 {
+    width: 100%;
+    max-width: 850px;
+    margin: 0;
+
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================================
+   INTRODUCTION SECTION
+================================================= */
+
+.electrical-intro {
+    width: 100%;
+    padding: 35px 20px;
+    background: #f1f2f3;
+}
+
+.electrical-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.electrical-content h2,
+.electrical-team-content h2 {
+    margin: 0;
+
+    color: #102f49;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.35;
+
+    text-align: center;
+}
+
+.electrical-heading-line {
+    width: 240px;
+    max-width: 75%;
+    height: 2px;
+
+    margin: 12px auto 22px;
+
+    background: #d4af37;
+}
+
+.electrical-intro-row {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.electrical-description {
+    flex: 1;
+    min-width: 0;
+}
+
+.electrical-description p,
+.electrical-team-description p {
+    margin: 0 0 18px;
+
+    color: #555;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* =================================================
+   INTRODUCTION IMAGE
+================================================= */
+
+.electrical-intro-image {
+    flex: 0 0 235px;
+    width: 235px;
+    height: 235px;
+
+    overflow: hidden;
+
+    border: 2px solid #d9ad55;
+    border-radius: 24px;
+
+    box-shadow: 0 3px 12px rgba(11, 31, 51, 0.15);
+}
+
+.electrical-intro-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.35s ease;
+}
+
+.electrical-intro-image img:hover {
+    transform: scale(1.04);
+}
+
+
+/* =================================================
+   BUTTON
+================================================= */
+
+.electrical-btn {
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    background: #102f49;
+    color: #fff;
+
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.electrical-btn:hover {
+    background: #d4af37;
+    color: #102f49;
+    border-color: #d4af37;
+}
+
+
+/* =================================================
+   ELECTRICAL TEAM SECTION
+================================================= */
+
+.electrical-team {
+    width: 100%;
+    padding: 35px 20px 45px;
+    background: #fff;
+}
+
+.electrical-team-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.electrical-team-row {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+
+/* =================================================
+   TEAM IMAGE
+================================================= */
+
+.electrical-team-image {
+    flex: 0 0 235px;
+    width: 235px;
+    height: 210px;
+
+    overflow: hidden;
+
+    border: 2px solid #d9ad55;
+    border-radius: 22px;
+
+    box-shadow: 0 3px 12px rgba(11, 31, 51, 0.12);
+}
+
+.electrical-team-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.35s ease;
+}
+
+.electrical-team-image img:hover {
+    transform: scale(1.04);
+}
+
+.electrical-team-description {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =================================================
+   TABLET
+================================================= */
+
+@media (max-width: 1000px) {
+
+    .electrical-hero,
+    .electrical-hero-image,
+    .electrical-hero-title {
+        min-height: 280px;
+    }
+
+    .electrical-hero-title h1 {
+        font-size: 32px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 25px;
+    }
+
+    .electrical-intro-row,
+    .electrical-team-row {
+        gap: 22px;
+    }
+
+    .electrical-intro-image,
+    .electrical-team-image {
+        flex-basis: 220px;
+        width: 220px;
+    }
+
+    .electrical-intro-image {
+        height: 220px;
+    }
+
+    .electrical-team-image {
+        height: 205px;
+    }
+
+    .electrical-description p,
+    .electrical-team-description p {
+        font-size: 14px;
+    }
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 767px) {
+
+    /* HERO */
+
+    .electrical-hero,
+    .electrical-hero-image,
+    .electrical-hero-title {
+        min-height: 220px;
+    }
+
+    .electrical-hero {
+        width: 100%;
+    }
+
+    .electrical-hero-image {
+        width: 100%;
+    }
+
+    .electrical-hero-image > img {
+        object-position: center;
+    }
+
+    .electrical-hero-title {
+        padding: 22px 18px;
+    }
+
+    .electrical-hero-title h1 {
+        max-width: 500px;
+        font-size: 27px;
+        line-height: 1.3;
+    }
+
+
+    /* INTRODUCTION */
+
+    .electrical-intro {
+        padding: 30px 18px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 23px;
+        line-height: 1.4;
+    }
+
+    .electrical-heading-line {
+        width: 170px;
+        margin: 12px auto 22px;
+    }
+
+    .electrical-intro-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .electrical-description {
+        width: 100%;
+        flex: none;
+    }
+
+    .electrical-description p,
+    .electrical-team-description p {
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+
+    /* INTRO IMAGE */
+
+    .electrical-intro-image {
+        flex: none;
+        width: 100%;
+        max-width: 320px;
+        height: 220px;
+        margin: 0 auto;
+
+        border-radius: 18px;
+    }
+
+
+    /* TEAM SECTION */
+
+    .electrical-team {
+        padding: 30px 18px 38px;
+    }
+
+    .electrical-team-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .electrical-team-image {
+        flex: none;
+        width: 100%;
+        max-width: 320px;
+        height: 215px;
+        margin: 0 auto;
+
+        border-radius: 18px;
+    }
+
+    .electrical-team-description {
+        width: 100%;
+        flex: none;
+    }
+
+
+    /* BUTTON */
+
+    .electrical-btn {
+        padding: 11px 17px;
+        font-size: 14px;
+    }
+}
+
+
+/* =================================================
+   SMALL MOBILE
+================================================= */
+
+@media (max-width: 380px) {
+
+    .electrical-hero,
+    .electrical-hero-image,
+    .electrical-hero-title {
+        min-height: 190px;
+    }
+
+    .electrical-hero-title {
+        padding: 18px 14px;
+    }
+
+    .electrical-hero-title h1 {
+        font-size: 24px;
+    }
+
+    .electrical-intro {
+        padding: 25px 15px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 21px;
+    }
+
+    .electrical-description p,
+    .electrical-team-description p {
+        font-size: 14px;
+    }
+
+    .electrical-intro-image {
+        height: 195px;
+    }
+
+    .electrical-team-image {
+        height: 190px;
+    }
+
+    .electrical-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+
+/* =================================================
+   EXTRA SMALL SCREEN SAFETY
+================================================= */
+
+@media (max-width: 320px) {
+
+    .electrical-hero-title h1 {
+        font-size: 22px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 20px;
+    }
+
+    .electrical-intro,
+    .electrical-team {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+
+
+/* =====================================
+   TRUSTED WEBSITE LABEL
+===================================== */
+
+.trusted-label {
+    position: fixed;
+    right: 25px;
+    bottom: 5px;
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 12px;
+    background: #0b1f33;
+    color: #ffffff;
+
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    animation: trustedAppear 0.4s ease 1s forwards;
+}
+
+/* Shield Icon */
+.trusted-label .fa-shield-halved {
+    color: #d9ad55;
+    font-size: 14px;
+}
+
+/* Verified Tick Icon */
+.trusted-label .trusted-tick {
+    color: #25D366;
+    font-size: 15px;
+}
+
+/* =====================================
+   SHOW AFTER 1 SECOND
+===================================== */
+
+@keyframes trustedAppear {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* =====================================
+   FLOATING WHATSAPP BUTTON
+===================================== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 65px;
+    z-index: 9999;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 767px) {
+
+    .trusted-label {
+        right: 14px;
+        bottom: 5px;
+
+        padding: 7px 10px;
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .trusted-label .fa-shield-halved {
+        font-size: 13px;
+    }
+
+    .trusted-label .trusted-tick {
+        font-size: 14px;
+    }
+
+    .whatsapp-float {
+        right: 14px;
+        bottom: 60px;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .trusted-label {
+        right: 10px;
+        bottom: 5px;
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .whatsapp-float {
+        right: 10px;
+        bottom: 55px;
+    }
+}
+
+
+
+/* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .privacy-footer {
+            width: 100%;
+
+            padding: 25px 20px;
+
+            background: #0b1f33;
+
+            text-align: center;
+        }
+
+        .privacy-footer p {
+            margin: 0;
+
+            color: rgba(255, 255, 255, 0.75);
+
+            font-size: 12px;
+        }
+
+
+        
+
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: #081827;
+
+    color: white;
+
+    width: 100%;
+
+    border-top: 3px solid #d9ad55;
+}
+
+.footer-container {
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 55px 45px 60px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+    
+    align-items: flex-start;
+}
+
+.footer-column h3 {
+    margin: 0 0 30px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    position: relative;
+
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 35px;
+
+    height: 2px;
+
+    background: #d9ad55;
+}
+
+.footer-column a {
+    color: #c7d1db;
+   text-decoration: none;
+    font-size: 14px;
+
+    margin-bottom: 17px;
+
+    transition: 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #d9ad55;
+
+    transform: translateX(4px);
+}
+
+
+/* FOOTER CONTACT */
+
+.contact-title {
+    margin-top: 30px !important;
+
+    margin-bottom: 30px !important;
+}
+
+.contact-item {
+    margin: 0 0 18px;
+
+    font-size: 14px;
+
+    color: #c7d1db;
+}
+
+.contact-item i {
+    width: 25px;
+
+    margin-right: 5px;
+
+    color: #d9ad55;
+}
+
+
+/* OFFICE */
+
+.office-title {
+    margin-top: 30px !important;
+
+    margin-bottom: 30px !important;
+}
+
+.address {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 0 18px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #c7d1db;
+}
+
+.address img {
+    width: 32px;
+
+    height: 21px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border-radius: 2px;
+}
+
+.address span {
+    display: inline-block;
+}
+
+
+
+
+/* ========================================
+   ELECTRICAL INTRODUCTION
+======================================== */
+
+.electrical-intro,
+.electrical-team {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.electrical-intro {
+    background: #f1f2f3;
+}
+
+.electrical-team {
+    background: #fff;
+}
+
+.electrical-content,
+.electrical-team-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* SECTION HEADING */
+
+.electrical-content h2,
+.electrical-team-content h2 {
+    margin: 0;
+    color: #102f49;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.electrical-heading-line {
+    width: 240px;
+    max-width: 75%;
+    height: 2px;
+    margin: 12px auto 25px;
+    background: #d4af37;
+}
+
+/* SINGLE COLUMN CONTENT */
+
+.electrical-intro-row,
+.electrical-team-row {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    display: block;
+}
+
+.electrical-description,
+.electrical-team-description {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* PARAGRAPH */
+
+.electrical-description p,
+.electrical-team-description p {
+    margin: 0 0 22px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* LIST HEADING */
+
+.electrical-description h4,
+.electrical-team-description h4 {
+    margin: 0 0 14px;
+    color: #102f49;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* LIST IN ONE COLUMN */
+
+.electrical-description ul,
+.electrical-team-description ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+
+    width: 100%;
+    margin: 0 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+/* INDIVIDUAL LIST ITEM CARD */
+
+.electrical-description ul li,
+.electrical-team-description ul li {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 15px 12px 40px;
+
+    background: #fff;
+    border: 1px solid #e3e6e8;
+    border-left: 3px solid #d4af37;
+    border-radius: 4px;
+
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* GOLD CHECK MARK */
+
+.electrical-description ul li::before,
+.electrical-team-description ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 15px;
+    top: 12px;
+
+    color: #b18a24;
+    font-weight: 700;
+}
+
+/* BUTTON */
+
+.electrical-btn {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 11px 20px;
+
+    background: #102f49;
+    color: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background 0.25s ease,
+                color 0.25s ease;
+}
+
+.electrical-btn:hover {
+    background: #d4af37;
+    color: #102f49;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .electrical-intro,
+    .electrical-team {
+        padding: 32px 18px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 24px;
+    }
+
+    .electrical-intro-row,
+    .electrical-team-row {
+        max-width: 100%;
+    }
+
+    .electrical-description p,
+    .electrical-team-description p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .electrical-intro,
+    .electrical-team {
+        padding: 27px 14px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .electrical-heading-line {
+        width: 150px;
+        margin: 10px auto 20px;
+    }
+
+    .electrical-description p,
+    .electrical-team-description p {
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .electrical-description h4,
+    .electrical-team-description h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .electrical-description ul,
+    .electrical-team-description ul {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .electrical-description ul li,
+    .electrical-team-description ul li {
+        padding: 10px 12px 10px 35px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .electrical-description ul li::before,
+    .electrical-team-description ul li::before {
+        left: 12px;
+        top: 10px;
+    }
+
+    .electrical-btn {
+        padding: 10px 17px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* PARAGRAPH AND LIST - SINGLE COLUMN */
+
+.electrical-description {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.electrical-description p {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.electrical-description h4 {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.electrical-description ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+
+.electrical-description ul li {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .electrical-description p,
+    .electrical-description h4,
+    .electrical-description ul {
+        width: 100%;
+    }
+
+    .electrical-description ul li {
+        overflow-wrap: anywhere;
+    }
+}
+
+
+
+
+/* ========================================
+   ELECTRICAL PAGE - IMAGE FIX
+======================================== */
+
+.electrical-hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #0b2438;
+}
+
+.electrical-hero-image {
+    width: 100%;
+    height: 360px;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.electrical-hero-image > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.electrical-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(11, 31, 51, 0.35),
+        rgba(11, 31, 51, 0.60)
+    );
+}
+
+.electrical-hero-title {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.electrical-hero-title h1 {
+    max-width: 850px;
+    margin: 0;
+    color: #fff;
+    font-size: 36px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   SECTION LAYOUT
+======================================== */
+
+.electrical-intro,
+.electrical-team {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.electrical-intro {
+    background: #f1f2f3;
+}
+
+.electrical-team {
+    background: #fff;
+}
+
+.electrical-content,
+.electrical-team-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.electrical-content h2,
+.electrical-team-content h2 {
+    margin: 0;
+    color: #102f49;
+    font-size: 27px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.electrical-heading-line {
+    width: 220px;
+    max-width: 75%;
+    height: 2px;
+    margin: 12px auto 25px;
+    background: #d4af37;
+}
+
+/* ========================================
+   IMAGE + TEXT ROWS
+======================================== */
+
+.electrical-intro-row,
+.electrical-team-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    min-width: 0;
+}
+
+.electrical-description,
+.electrical-team-description {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.electrical-intro-image,
+.electrical-team-image {
+    flex: 0 1 300px;
+    width: 100%;
+    max-width: 300px;
+    height: 240px;
+    min-width: 0;
+    overflow: hidden;
+    border: 2px solid #d4af37;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.electrical-intro-image img,
+.electrical-team-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.electrical-intro-image img:hover,
+.electrical-team-image img:hover {
+    transform: scale(1.04);
+}
+
+/* ========================================
+   PARAGRAPHS AND LISTS
+======================================== */
+
+.electrical-description p,
+.electrical-team-description p {
+    margin: 0 0 18px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.electrical-description h4,
+.electrical-team-description h4 {
+    margin: 0 0 12px;
+    color: #102f49;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.electrical-description ul,
+.electrical-description ol,
+.electrical-team-description ul,
+.electrical-team-description ol {
+    padding-left: 24px;
+    margin: 0 0 22px;
+}
+
+.electrical-description li,
+.electrical-team-description li {
+    margin-bottom: 8px;
+    padding-left: 3px;
+    color: #444;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.electrical-btn {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 11px 20px;
+    background: #102f49;
+    color: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.electrical-btn:hover {
+    background: #d4af37;
+    color: #102f49;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+    .electrical-hero-image {
+        height: 300px;
+    }
+
+    .electrical-hero-title h1 {
+        font-size: 29px;
+    }
+
+    .electrical-intro,
+    .electrical-team {
+        padding: 32px 18px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 24px;
+    }
+
+    .electrical-intro-row,
+    .electrical-team-row {
+        gap: 22px;
+    }
+
+    .electrical-intro-image,
+    .electrical-team-image {
+        flex-basis: 240px;
+        max-width: 240px;
+        height: 220px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+    .electrical-hero-image {
+        height: 230px;
+    }
+
+    .electrical-hero-title {
+        padding: 15px;
+    }
+
+    .electrical-hero-title h1 {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    .electrical-intro,
+    .electrical-team {
+        padding: 28px 15px;
+    }
+
+    .electrical-content h2,
+    .electrical-team-content h2 {
+        font-size: 21px;
+    }
+
+    .electrical-heading-line {
+        width: 150px;
+        margin: 10px auto 20px;
+    }
+
+    .electrical-intro-row,
+    .electrical-team-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .electrical-description,
+    .electrical-team-description {
+        width: 100%;
+        flex: none;
+    }
+
+    .electrical-intro-image,
+    .electrical-team-image {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+        flex: none;
+    }
+
+    .electrical-description p,
+    .electrical-team-description p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .electrical-description h4,
+    .electrical-team-description h4 {
+        font-size: 16px;
+    }
+
+    .electrical-description li,
+    .electrical-team-description li {
+        font-size: 14px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
+    .electrical-hero-image {
+        height: 200px;
+    }
+
+    .electrical-hero-title h1 {
+        font-size: 21px;
+    }
+
+    .electrical-intro,
+    .electrical-team {
+        padding: 24px 12px;
+    }
+
+    .electrical-intro-image,
+    .electrical-team-image {
+        height: 190px;
+    }
+}
+
+
+
+/* Rounded Electrical Images */
+
+.electrical-intro-image,
+.electrical-team-image {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid #d4af37;
+    box-shadow: 0 5px 16px rgba(11, 31, 51, 0.12);
+}
+
+.electrical-intro-image img,
+.electrical-team-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.35s ease;
+}
+
+.electrical-intro-image img:hover,
+.electrical-team-image img:hover {
+    transform: scale(1.04);
+}
+
+/* Hero image ke corners square hi rahenge */
+.electrical-hero-image,
+.electrical-hero-image img {
+    border-radius: 0;
+}
