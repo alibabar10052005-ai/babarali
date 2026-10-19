@@ -703,95 +703,220 @@ header.scrolled .nav-links a {
 }
 
 
-/* =========================================================
-   ABOUT
-========================================================= */
+/* =========================================
+   ABOUT SECTION - SCREENSHOT MATCH
+========================================= */
 
 .about {
     background: #ffffff;
-
-    padding: 25px 6% 70px;
-
+    padding: 45px 5.7% 50px;
     color: #536273;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-.about-box {
-    max-width: 1350px;
+.about .about-box {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
 
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 280px 1fr;
-
-    align-items: start;
-
-    gap: 50px;
+    display: grid !important;
+    grid-template-columns: 230px minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: 25px;
 }
 
-.about-image {
+/* LOGO LEFT */
+
+.about .about-image {
+    width: 100%;
     display: flex;
-
     justify-content: center;
-
-    align-items: flex-start;
-
-    padding-top: 5px;
-}
-
-.about-image img {
-    width: 245px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    transition: 0.4s ease;
-}
-
-.about-image img:hover {
-    transform: translateY(-5px);
-}
-
-.about-content {
-    padding-top: 7px;
-}
-
-.about-content p,
-.about-text p {
-    font-size: 15.5px;
-
-    line-height: 1.8;
-
-    letter-spacing: 0.1px;
-
+    align-items: center;
+    padding: 0;
     margin: 0;
+}
 
+.about .about-image img {
+    display: block;
+    width: 210px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+/* PARAGRAPH RIGHT */
+
+.about .about-content {
+    width: 90%;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.about .about-content p {
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: 0;
     color: #536273;
+    margin: 0;
 }
-.about-text p a{
-    
+
+/* REMAINING PARAGRAPHS */
+
+.about .about-text {
+    width: 90%;
+    max-width: 1360px;
+    margin: 24px auto 0;
+}
+
+.about .about-text p {
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: #536273;
+    margin: 0 0 24px;
+}
+
+.about .about-text a {
     color: #b48632;
-text-decoration: none;
+    text-decoration: none;
     font-weight: 700;
-}
-
-.about-text {
-    max-width: 1350px;
-
-    margin: 42px auto 0;
-}
-
-.about-text p {
-    margin-bottom: 24px;
 }
 
 .about strong {
-    color: #b48632;
-
     font-weight: 700;
 }
 
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .about {
+        padding: 35px 4% 40px;
+    }
+
+    .about .about-box {
+        grid-template-columns: 180px minmax(0, 1fr) !important;
+        column-gap: 20px;
+    }
+
+    .about .about-image img {
+        width: 170px;
+    }
+
+    .about .about-content p,
+    .about .about-text p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+}
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .about {
+        padding: 25px 15px 30px;
+    }
+
+    /* LOGO ON TOP, PARAGRAPH BELOW */
+    .about .about-box {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .about .about-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .about .about-image img {
+        width: 135px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* FIRST PARAGRAPH BELOW LOGO */
+    .about .about-content {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .about .about-content p {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.7;
+        letter-spacing: 0;
+        text-align: left;
+        margin: 0;
+    }
+
+    /* REMAINING PARAGRAPHS */
+    .about .about-text {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto 0;
+    }
+
+    .about .about-text p {
+        font-size: 13px;
+        line-height: 1.7;
+        letter-spacing: 0;
+        margin: 0 0 18px;
+        overflow-wrap: break-word;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .about {
+        padding: 20px 12px 28px;
+    }
+
+    .about .about-image img {
+        width: 120px;
+    }
+
+    .about .about-content p,
+    .about .about-text p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .about .about-text p {
+        font-size: 12px;
+    }
+
+    .about .about-text a {
+        white-space: nowrap !important;
+    }
+}
 
 /* =========================================================
    SERVICES
